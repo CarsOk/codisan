@@ -24,6 +24,11 @@ default: &default
 development:
   <<: *default
   database: Proyecto_Codisan_development
+  locahost: 5432
+  adapter: postgresql
+  encoding: unicode
+  username: root
+  password: root
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +63,11 @@ development:
 test:
   <<: *default
   database: Proyecto_Codisan_test
+  locahost: 5432
+  adapter: postgresql
+  encoding: unicode
+  username: root
+  password: root
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
