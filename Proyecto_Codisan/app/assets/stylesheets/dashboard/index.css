@@ -1,0 +1,13 @@
+.navbar-collapse{
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.cta{
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.logo-nav{
+    width: 50px;
+    height: 40px;
+}
