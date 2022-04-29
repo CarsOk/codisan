@@ -1,4 +1,4 @@
-
+<%= render 'layouts/navbar' %>
 
 <table class="table">
   <thead "thead-dark">
@@ -19,7 +19,7 @@
             <td><%= user.first_name %> </td>
             <td><%= user.first_last_name %> </td>
             <td><%= user.roles.pluck(:name) %></td>
-            <td><%= button_to  'editar', edit_user_path(user), method: :get %></td>
+            <td><%= link_to  'editar', edit_user_path(user), method: :get %></td>
         </tr>
     <% end %> 
   </tbody>
