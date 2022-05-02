@@ -11,11 +11,11 @@
         </div>
 
          <div class="field">
-          <%= f.number_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
+          <%= f.text_field :document, autofocus: true, placeholder:"Ingrese su documento", class:"form-control"%>
         <div>
 
         <div class="field">
-          <%= f.password_field :password, autocomplete: "current-password",placeholder:"ingrese su contraseña", class:"form-control"%>
+          <%= f.password_field :password, autocomplete: "current-password",placeholder:"Ingrese su contraseña", class:"form-control"%>
         </div>
 
         <% if devise_mapping.rememberable? %>

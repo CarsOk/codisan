@@ -4,7 +4,6 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-  <%=image_tag user_avatar2(current_user, 40), class: "rounded-circle"  %>
   <%= f.file_field :avatar%>
 </div>
 
@@ -18,7 +17,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(Déjalo en blanco si no quieres cambiarlo)</i><br />
+    <%= f.label :Contraseña %> <i>(Déjalo en blanco si no quieres cambiarlo)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
@@ -43,6 +42,6 @@
 
 <h3>Cancelar mi cuenta</h3>
 
-<p>Infeliz? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
+<p>Infeliz? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
 
 <%= link_to "Atrás", :back %>
