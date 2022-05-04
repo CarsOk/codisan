@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  mount_uploader:avatar, AvatarUploader
   rolify
 
   # Include default devise modules. Others available are:
