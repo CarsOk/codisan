@@ -1,12 +1,15 @@
 class User < ApplicationRecord
 
+  mount_uploader:avatar, AvatarUploader
   rolify
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+         
   has_one_attached :avatar  
+
   after_create :assign_default_role
 
   validate :must_have_a_role, on: :update
