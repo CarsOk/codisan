@@ -1,21 +1,43 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
     <div>
         <%= image_tag "logo.ico",:alt => "Logo", class: "rounded-circle" %>
     </div>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    fhirvrib
-    </div>
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-        </button>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <%= image_tag(current_user.avatar.url, :size => "40x40", class: "user_img") if current_user.avatar? %>
-            <%= link_to "Editar", edit_user_registration_path, class: "dropdown-item" %> 
-            <%= link_to "Cerrar", destroy_user_session_path, class: "dropdown-item" %>
-        </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        fhirvrib
+    </div>
+
+   <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+             Menu
+        </button>
+        
+        <ul class="dropdown-menu dropdown-menu-lg-end">
+            <li class= "img_avatar">
+                <%if current_user.avatar? %>
+                <% end%>
+                <%= image_tag(current_user.avatar.url, :size => "40x40", class: "user_img") %> 
+                
+
+            </li>
+            <li><%= button_to "Inicio", root_path, method: :get, class: "dropdown-item" %> </li>
+            <li><%= button_to "Perfil", current_user, method: :get, class: "dropdown-item" %></li>
+            <li><%= button_to "Cerrar", destroy_user_session_path, method: :get, class: "dropdown-item" %></li>
+            <li><%= button_to "Admin",  users_path, method: :get,  class: "dropdown-item" %></li>
+
+            
+        </ul>
     </div>
 </nav>
 
 
+
+<%# <div class="btn-group">
+  
+  
+    <li><button class="dropdown-item" type="button">Action</button></li>
+    <li><button class="dropdown-item" type="button">Another action</button></li>
+    <li><button class="dropdown-item" type="button">Something else here</button></li>
+  
+</div> %>

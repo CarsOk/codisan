@@ -81,7 +81,6 @@ gem "rolify"
 gem "pundit"
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
-gem 'jquery-rails'
 gem "ruby-vips"
 gem 'carrierwave'
 
