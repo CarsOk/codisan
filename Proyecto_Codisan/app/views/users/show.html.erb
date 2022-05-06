@@ -1,8 +1,7 @@
 <%= render 'layouts/navbar' %>
 <div class = "user_div">
     <section class="mb-3">
-    
-    <div class = "user_img"><%= image_tag(@user.avatar.url, :size => "100x100", class: "rounded-circle") if @user.avatar? %></div>
+    <div class="user_img"><%= image_tag(@user.avatar.url, :size => "100x100", class: "rounded-circle") if @user.avatar? %></div>
     <div class="form-control">Tipo de documento: <%= @user.type_document %></div>
     <div class="form-control">Documento: <%= @user.document %></div>
     <div class="form-control">Nombres: <%= @user.first_name %> <%= @user.second_name %></div>
@@ -11,6 +10,5 @@
     <div class="form-control">Numero de telefono: <%= @user.phone_number %></div>
     <%= button_to "Editar", edit_user_registration_path, method: :get, class: "dropdown-item", id:"boton-edit"%>
     </section>
-
 </div>
 <%= render 'layouts/footer' %>
