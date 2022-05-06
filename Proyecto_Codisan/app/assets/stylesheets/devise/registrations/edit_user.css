@@ -1,21 +1,27 @@
-.container-registrar{
+.container-edit{
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.article-registrar{
-    margin-top: 6%;
+.formulario{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 20px;
+    width: 400px;
     border: 1px solid gray;
-    width: 500px;
-    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: whitesmoke;
+    border-radius: 5px;
 }
-#center-text{
-    text-align: center;
+.field{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.rounded-circle{
+    margin-bottom: 10px;
 }
