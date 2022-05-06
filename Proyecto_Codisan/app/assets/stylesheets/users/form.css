@@ -1,0 +1,9 @@
+.form-editar{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}

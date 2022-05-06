@@ -1,0 +1,18 @@
+.bg-light {
+    background-color: green!important;
+}
+.btn-secondary {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+.btn-secondary:hover {
+    color: black;
+    background-color: white;
+    border-color: white;
+}
+.nombre-nav{
+    margin-top: 15px;
+    color: white;
+    text-decoration: none;
+}
