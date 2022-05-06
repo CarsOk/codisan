@@ -14597,3 +14597,1737 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 103ms (Views: 95.9ms | ActiveRecord: 0.2ms | Allocations: 14173)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:14:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 170ms (ActiveRecord: 0.0ms | Allocations: 7080)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-04 15:14:38 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 41.4ms | Allocations: 921)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1314.4ms | Allocations: 119645)
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-05-04 15:14:39 -0500
+  Rendered layout layouts/application.html.erb (Duration: 1417.9ms | Allocations: 136697)
+Completed 200 OK in 1592ms (Views: 1523.5ms | ActiveRecord: 9.9ms | Allocations: 151962)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1998)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 5011)
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 5898)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-04 15:14:43 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 13.3ms | Allocations: 249)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 268)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 36.1ms | Allocations: 3456)
+  Rendered layout layouts/application.html.erb (Duration: 51.4ms | Allocations: 6761)
+Completed 200 OK in 66ms (Views: 60.2ms | ActiveRecord: 0.0ms | Allocations: 8422)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2022-05-04 15:16:05 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 240)
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 589)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 154.3ms | Allocations: 13467)
+  Rendered layout layouts/application.html.erb (Duration: 171.0ms | Allocations: 17012)
+Completed 200 OK in 189ms (Views: 184.2ms | ActiveRecord: 0.0ms | Allocations: 18738)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-04 15:16:16 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"type_document"=>"CC", "document"=>"1043660289", "first_name"=>"tedd", "second_name"=>"", "first_last_name"=>"", "second_last_name"=>"", "phone_number"=>"", "email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Registrarme"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 1075)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 104)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3866)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 7151)
+Completed 200 OK in 63ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 11539)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-05-04 15:16:49 -0500
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"type_document"=>"CC", "document"=>"1043660289", "first_name"=>"tedd", "second_name"=>"eduardo", "first_last_name"=>"cortes", "second_last_name"=>"castro", "phone_number"=>"123456789", "email"=>"ruby@ruby.com", "password"=>"[FILTERED]"}, "commit"=>"Registrarme"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ruby@ruby.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("type_document", "first_name", "first_last_name", "email", "encrypted_password", "phone_number", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "second_name", "second_last_name", "document", "avatar") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["type_document", "cc"], ["first_name", "tedd"], ["first_last_name", "cortes"], ["email", "ruby@ruby.com"], ["encrypted_password", "$2a$12$pjDPn5gKpE.nPBH5MHFcaeoxnbxp7LxC2ww2bcB/336yYWD/uHTgG"], ["phone_number", 123456789], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil], ["created_at", "2022-05-04 20:16:50.047561"], ["updated_at", "2022-05-04 20:16:50.047561"], ["second_name", "eduardo"], ["second_last_name", "castro"], ["document", "1043660289"], ["avatar", nil]]
+  [1m[36mRole Load (6.4ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/models/user.rb:28:in `assign_default_role'
+  [1m[36mRole Load (0.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" WHERE "roles"."name" = $1 AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL ORDER BY "roles"."id" ASC LIMIT $2[0m  [["name", "student"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28:in `assign_default_role'
+  [1m[36mUser::HABTM_Roles Create (1.0ms)[0m  [1m[32mINSERT INTO "users_roles" ("user_id", "role_id") VALUES ($1, $2)[0m  [["user_id", 2], ["role_id", 1]]
+  ↳ app/models/user.rb:28:in `assign_default_role'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 787ms (ActiveRecord: 27.0ms | Allocations: 50412)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:16:50 -0500
+Processing by DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.9ms | Allocations: 1394)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 4874)
+Completed 200 OK in 47ms (Views: 34.2ms | ActiveRecord: 0.4ms | Allocations: 7722)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 15:16:55 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 20.8ms | Allocations: 3031)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 6273)
+Completed 200 OK in 45ms (Views: 37.5ms | ActiveRecord: 0.5ms | Allocations: 8385)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:17:15 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 859)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 3979)
+Completed 200 OK in 31ms (Views: 21.1ms | ActiveRecord: 0.5ms | Allocations: 5977)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:19:16 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.2ms | Allocations: 850)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 3963)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 5719)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 15:19:19 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1864)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 4986)
+Completed 200 OK in 31ms (Views: 21.3ms | ActiveRecord: 0.4ms | Allocations: 6819)
+
+
+Started PUT "/users" for 127.0.0.1 at 2022-05-04 15:19:36 -0500
+Processing by Devise::RegistrationsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x000001de3f1ce3e0 @tempfile=#<Tempfile:C:/Users/HPLAPT~1/AppData/Local/Temp/RackMultipart20220504-8300-9akmfv.png>, @original_filename="descarga.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"descarga.png\"\r\nContent-Type: image/png\r\n">, "email"=>"ruby@ruby.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "current_password"=>"[FILTERED]"}, "commit"=>"Actualizar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:20:in `must_have_a_role'
+  [1m[36mRole Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20:in `must_have_a_role'
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "avatar" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2022-05-04 20:19:36.552001"], ["avatar", "descarga.png"], ["id", 2]]
+  [1m[36mTRANSACTION (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 266ms (ActiveRecord: 8.6ms | Allocations: 10544)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:19:36 -0500
+Processing by DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 1118)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1214)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 4284)
+Completed 200 OK in 29ms (Views: 22.2ms | ActiveRecord: 0.2ms | Allocations: 6033)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:26:44 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.7ms | Allocations: 1499)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1797)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 5154)
+Completed 200 OK in 167ms (Views: 36.4ms | ActiveRecord: 13.7ms | Allocations: 10224)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:27:41 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 1501)
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 358)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 2294)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 5653)
+Completed 200 OK in 52ms (Views: 42.2ms | ActiveRecord: 0.5ms | Allocations: 8412)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:35:13 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.0ms | Allocations: 1500)
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 358)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 2293)
+  Rendered layout layouts/application.html.erb (Duration: 86.1ms | Allocations: 13297)
+Completed 200 OK in 220ms (Views: 96.0ms | ActiveRecord: 21.9ms | Allocations: 18450)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:38:51 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.1ms | Allocations: 1500)
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 2298)
+  Rendered layout layouts/application.html.erb (Duration: 80.6ms | Allocations: 14360)
+Completed 200 OK in 102ms (Views: 93.0ms | ActiveRecord: 0.5ms | Allocations: 17130)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:39:22 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.8ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4159)
+Completed 200 OK in 35ms (Views: 25.8ms | ActiveRecord: 0.5ms | Allocations: 6061)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:41:29 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 9.0ms | Allocations: 1499)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2297)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 5652)
+Completed 200 OK in 57ms (Views: 45.7ms | ActiveRecord: 0.5ms | Allocations: 8212)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:42:05 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 2295)
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 15465)
+Completed 200 OK in 101ms (Views: 90.0ms | ActiveRecord: 0.4ms | Allocations: 18214)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:42:32 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.5ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 12494)
+Completed 200 OK in 90ms (Views: 79.3ms | ActiveRecord: 0.6ms | Allocations: 14447)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:42:42 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.3ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 88.2ms | Allocations: 11532)
+Completed 200 OK in 99ms (Views: 89.3ms | ActiveRecord: 0.3ms | Allocations: 13293)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:44:48 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 13887)
+Completed 200 OK in 86ms (Views: 76.9ms | ActiveRecord: 0.3ms | Allocations: 15636)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:45:04 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 74.4ms | Allocations: 12509)
+Completed 200 OK in 86ms (Views: 75.6ms | ActiveRecord: 0.4ms | Allocations: 14254)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:46:22 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | Allocations: 12949)
+Completed 200 OK in 86ms (Views: 79.0ms | ActiveRecord: 0.4ms | Allocations: 14698)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:46:33 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.5ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 71.1ms | Allocations: 13889)
+Completed 200 OK in 81ms (Views: 72.2ms | ActiveRecord: 0.3ms | Allocations: 15641)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:47:14 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 82.7ms | Allocations: 12988)
+Completed 200 OK in 93ms (Views: 83.9ms | ActiveRecord: 0.5ms | Allocations: 14731)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:47:25 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 73.4ms | Allocations: 12018)
+Completed 200 OK in 81ms (Views: 74.7ms | ActiveRecord: 0.2ms | Allocations: 13773)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:47:42 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 75.6ms | Allocations: 12498)
+Completed 200 OK in 85ms (Views: 76.8ms | ActiveRecord: 0.3ms | Allocations: 14232)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:51:42 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 12943)
+Completed 200 OK in 80ms (Views: 70.3ms | ActiveRecord: 0.4ms | Allocations: 14668)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:55:12 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.5ms | Allocations: 2307)
+  Rendered layout layouts/application.html.erb (Duration: 72.3ms | Allocations: 14105)
+Completed 200 OK in 90ms (Views: 80.8ms | ActiveRecord: 0.3ms | Allocations: 16692)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:55:40 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.3ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 71.9ms | Allocations: 12025)
+Completed 200 OK in 82ms (Views: 73.2ms | ActiveRecord: 0.3ms | Allocations: 13945)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:55:52 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 68.4ms | Allocations: 12506)
+Completed 200 OK in 79ms (Views: 69.7ms | ActiveRecord: 0.4ms | Allocations: 14276)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:56:13 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.3ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 79.5ms | Allocations: 12526)
+Completed 200 OK in 91ms (Views: 80.9ms | ActiveRecord: 0.4ms | Allocations: 14251)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:56:23 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.9ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 4201)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 5930)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:57:50 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | Allocations: 12028)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 0.3ms | Allocations: 13766)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:02 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.9ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 72.9ms | Allocations: 13004)
+Completed 200 OK in 82ms (Views: 74.0ms | ActiveRecord: 0.4ms | Allocations: 14741)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:09 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.5ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 72.8ms | Allocations: 12958)
+Completed 200 OK in 84ms (Views: 74.0ms | ActiveRecord: 0.3ms | Allocations: 14704)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:20 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 13878)
+Completed 200 OK in 82ms (Views: 72.7ms | ActiveRecord: 0.3ms | Allocations: 15648)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:33 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.9ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 4199)
+Completed 200 OK in 38ms (Views: 28.7ms | ActiveRecord: 0.3ms | Allocations: 5969)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:40 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 70.1ms | Allocations: 12956)
+Completed 200 OK in 81ms (Views: 71.2ms | ActiveRecord: 0.3ms | Allocations: 14693)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:58:54 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 69.2ms | Allocations: 12474)
+Completed 200 OK in 79ms (Views: 70.5ms | ActiveRecord: 0.2ms | Allocations: 14202)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 15:59:03 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | Allocations: 12455)
+Completed 200 OK in 79ms (Views: 70.0ms | ActiveRecord: 0.3ms | Allocations: 14225)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:05:34 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.5ms | Allocations: 1500)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 2315)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 5690)
+Completed 200 OK in 167ms (Views: 42.6ms | ActiveRecord: 14.4ms | Allocations: 10718)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:08:35 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.9ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 2308)
+  Rendered layout layouts/application.html.erb (Duration: 83.5ms | Allocations: 15969)
+Completed 200 OK in 105ms (Views: 93.7ms | ActiveRecord: 0.6ms | Allocations: 18722)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:08:55 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 13927)
+Completed 200 OK in 82ms (Views: 75.2ms | ActiveRecord: 0.5ms | Allocations: 15838)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-1dcb9d44c695f1299283b52a474d3645609909d8c0f10000860ef38702426d9b.css"):
+  
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:09 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 1113)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1272)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 5012)
+Completed 200 OK in 39ms (Views: 29.4ms | ActiveRecord: 0.6ms | Allocations: 6967)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:14 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4245)
+Completed 200 OK in 32ms (Views: 24.7ms | ActiveRecord: 0.4ms | Allocations: 5988)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:29 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 12125)
+Completed 200 OK in 74ms (Views: 66.2ms | ActiveRecord: 0.3ms | Allocations: 13883)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:42 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 68.8ms | Allocations: 13013)
+Completed 200 OK in 80ms (Views: 70.2ms | ActiveRecord: 0.3ms | Allocations: 14769)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:47 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 4171)
+Completed 200 OK in 35ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 5921)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:09:53 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 13419)
+Completed 200 OK in 78ms (Views: 69.2ms | ActiveRecord: 0.3ms | Allocations: 15195)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:11:14 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 9.1ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 2313)
+  Rendered layout layouts/application.html.erb (Duration: 82.8ms | Allocations: 15544)
+Completed 200 OK in 103ms (Views: 91.3ms | ActiveRecord: 0.4ms | Allocations: 18096)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:11:21 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 4158)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 0.3ms | Allocations: 6087)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:12:29 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 13002)
+Completed 200 OK in 81ms (Views: 72.9ms | ActiveRecord: 0.4ms | Allocations: 14754)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:12:40 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.9ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 69.0ms | Allocations: 13453)
+Completed 200 OK in 79ms (Views: 70.3ms | ActiveRecord: 0.3ms | Allocations: 15196)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:12:53 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 4827)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 6558)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:13:00 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 974)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 65.3ms | Allocations: 12064)
+Completed 200 OK in 75ms (Views: 66.4ms | ActiveRecord: 0.3ms | Allocations: 13806)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:13:07 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 61.0ms | Allocations: 12550)
+Completed 200 OK in 69ms (Views: 62.0ms | ActiveRecord: 0.2ms | Allocations: 14297)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:24:28 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.7ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2323)
+  Rendered layout layouts/application.html.erb (Duration: 77.1ms | Allocations: 14122)
+Completed 200 OK in 222ms (Views: 88.5ms | ActiveRecord: 14.5ms | Allocations: 19146)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:24:53 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.5ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 13015)
+Completed 200 OK in 86ms (Views: 75.9ms | ActiveRecord: 0.6ms | Allocations: 14947)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:25:19 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.3ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 4200)
+Completed 200 OK in 38ms (Views: 29.1ms | ActiveRecord: 0.5ms | Allocations: 5937)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:25:28 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.2ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 4158)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 0.4ms | Allocations: 5898)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:28:34 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 13455)
+Completed 200 OK in 83ms (Views: 73.8ms | ActiveRecord: 0.5ms | Allocations: 15222)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:29:40 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 10.4ms | Allocations: 1499)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 2322)
+  Rendered layout layouts/application.html.erb (Duration: 85.8ms | Allocations: 14624)
+Completed 200 OK in 107ms (Views: 98.2ms | ActiveRecord: 0.5ms | Allocations: 17190)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:29:57 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.0ms | Allocations: 1503)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 2328)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 5704)
+Completed 200 OK in 55ms (Views: 44.1ms | ActiveRecord: 0.3ms | Allocations: 8443)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:31:15 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.8ms | Allocations: 1498)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 2320)
+  Rendered layout layouts/application.html.erb (Duration: 76.2ms | Allocations: 14627)
+Completed 200 OK in 99ms (Views: 87.4ms | ActiveRecord: 0.4ms | Allocations: 17385)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:31:34 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 12979)
+Completed 200 OK in 79ms (Views: 68.8ms | ActiveRecord: 0.3ms | Allocations: 14903)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:31:41 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.3ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 4159)
+Completed 200 OK in 31ms (Views: 24.1ms | ActiveRecord: 0.3ms | Allocations: 5906)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:31:58 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 12497)
+Completed 200 OK in 86ms (Views: 76.0ms | ActiveRecord: 0.4ms | Allocations: 14249)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-a25516deed66d3f047eac2b43400602aa8c3f03fe02bf520e2253ebb18c5846a.css"):
+  
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:02 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4205)
+Completed 200 OK in 28ms (Views: 21.4ms | ActiveRecord: 0.3ms | Allocations: 5939)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:06 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 4182)
+Completed 200 OK in 31ms (Views: 23.7ms | ActiveRecord: 0.3ms | Allocations: 5924)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:31 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 12534)
+Completed 200 OK in 78ms (Views: 68.8ms | ActiveRecord: 0.3ms | Allocations: 14286)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:39 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 4160)
+Completed 200 OK in 37ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 5889)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:50 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 71.0ms | Allocations: 13952)
+Completed 200 OK in 81ms (Views: 72.1ms | ActiveRecord: 0.2ms | Allocations: 15710)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-d60fbbc3503eaad4d48175a2abd7b7eb923d5fd1738a60980159b0b7464618c1.css"):
+  
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:32:53 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.2ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 4209)
+Completed 200 OK in 35ms (Views: 25.5ms | ActiveRecord: 0.4ms | Allocations: 5953)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:32 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 6414)
+Completed 200 OK in 57ms (Views: 48.4ms | ActiveRecord: 0.5ms | Allocations: 8948)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:34 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 981)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 4196)
+Completed 200 OK in 33ms (Views: 23.8ms | ActiveRecord: 0.3ms | Allocations: 6137)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:38 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 5117)
+Completed 200 OK in 31ms (Views: 22.4ms | ActiveRecord: 0.3ms | Allocations: 6944)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:39 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.8ms | Allocations: 972)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 4162)
+Completed 200 OK in 36ms (Views: 29.0ms | ActiveRecord: 0.3ms | Allocations: 5921)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:41 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 5095)
+Completed 200 OK in 27ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 6890)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:42 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.2ms | Allocations: 970)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1129)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 4168)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 0.4ms | Allocations: 5932)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:44 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5107)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 0.4ms | Allocations: 6917)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:45 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4160)
+Completed 200 OK in 34ms (Views: 26.2ms | ActiveRecord: 0.3ms | Allocations: 5916)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:47 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 5094)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 0.4ms | Allocations: 6889)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:49 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 4171)
+Completed 200 OK in 32ms (Views: 24.2ms | ActiveRecord: 0.4ms | Allocations: 5932)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:36:51 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 5100)
+Completed 200 OK in 33ms (Views: 23.6ms | ActiveRecord: 0.3ms | Allocations: 6901)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:36:52 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 4158)
+Completed 200 OK in 33ms (Views: 23.3ms | ActiveRecord: 0.3ms | Allocations: 5907)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:39:15 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 9.4ms | Allocations: 1497)
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2321)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 5676)
+Completed 200 OK in 55ms (Views: 43.8ms | ActiveRecord: 0.3ms | Allocations: 8233)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:39:36 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 72.2ms | Allocations: 13534)
+Completed 200 OK in 81ms (Views: 73.2ms | ActiveRecord: 0.3ms | Allocations: 15454)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:39:38 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.5ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 4158)
+Completed 200 OK in 30ms (Views: 22.8ms | ActiveRecord: 0.3ms | Allocations: 5907)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:40:09 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 4164)
+Completed 200 OK in 36ms (Views: 26.8ms | ActiveRecord: 0.5ms | Allocations: 5905)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:40:13 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 13.7ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 6413)
+Completed 200 OK in 52ms (Views: 42.8ms | ActiveRecord: 0.3ms | Allocations: 8940)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:40:14 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 981)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 4198)
+Completed 200 OK in 40ms (Views: 32.6ms | ActiveRecord: 0.3ms | Allocations: 6182)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:40:39 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.2ms | Allocations: 1502)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 2326)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 6386)
+Completed 200 OK in 58ms (Views: 46.9ms | ActiveRecord: 0.4ms | Allocations: 8954)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:41:57 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 972)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1131)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 13532)
+Completed 200 OK in 80ms (Views: 70.8ms | ActiveRecord: 0.4ms | Allocations: 15459)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:42:08 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.3ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 14430)
+Completed 200 OK in 77ms (Views: 68.1ms | ActiveRecord: 0.3ms | Allocations: 16168)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:42:18 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 13974)
+Completed 200 OK in 81ms (Views: 71.5ms | ActiveRecord: 0.3ms | Allocations: 15717)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 16:54:09 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 6413)
+Completed 200 OK in 168ms (Views: 41.4ms | ActiveRecord: 17.4ms | Allocations: 11399)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:54:12 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 975)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1134)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 4166)
+Completed 200 OK in 31ms (Views: 24.5ms | ActiveRecord: 0.4ms | Allocations: 6120)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:59:09 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 1488)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 2309)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 5664)
+Completed 200 OK in 52ms (Views: 40.5ms | ActiveRecord: 0.5ms | Allocations: 8257)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:59:28 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 969)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 4158)
+Completed 200 OK in 32ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 6081)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:59:38 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.5ms | Allocations: 1485)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2307)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 5668)
+Completed 200 OK in 57ms (Views: 44.3ms | ActiveRecord: 0.7ms | Allocations: 8241)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:59:39 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 971)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1130)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 4185)
+Completed 200 OK in 32ms (Views: 21.5ms | ActiveRecord: 0.4ms | Allocations: 6116)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 16:59:58 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.7ms | Allocations: 1489)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2315)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 5687)
+Completed 200 OK in 52ms (Views: 40.8ms | ActiveRecord: 0.4ms | Allocations: 8251)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:00:23 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.9ms | Allocations: 1491)
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 5679)
+Completed 200 OK in 57ms (Views: 46.0ms | ActiveRecord: 0.3ms | Allocations: 8426)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:00:36 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.3ms | Allocations: 1491)
+  Rendered layouts/_footer.html.erb (Duration: 2.0ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 5678)
+Completed 200 OK in 55ms (Views: 44.0ms | ActiveRecord: 0.4ms | Allocations: 8437)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:01:47 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.2ms | Allocations: 1491)
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.1ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 5680)
+Completed 200 OK in 59ms (Views: 49.1ms | ActiveRecord: 0.4ms | Allocations: 8432)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:02:02 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 9.0ms | Allocations: 1491)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 5671)
+Completed 200 OK in 49ms (Views: 41.4ms | ActiveRecord: 0.3ms | Allocations: 8441)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:04:39 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 1493)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2315)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 5670)
+Completed 200 OK in 56ms (Views: 43.8ms | ActiveRecord: 0.4ms | Allocations: 8449)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:07:52 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.3ms | Allocations: 1300)
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2121)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 5477)
+Completed 200 OK in 58ms (Views: 45.3ms | ActiveRecord: 0.4ms | Allocations: 8232)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 17:07:57 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.7ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 16.2ms | Allocations: 3117)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 6412)
+Completed 200 OK in 54ms (Views: 44.9ms | ActiveRecord: 0.3ms | Allocations: 9157)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:08:01 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 879)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 4069)
+Completed 200 OK in 35ms (Views: 25.2ms | ActiveRecord: 0.3ms | Allocations: 6015)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:08:07 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.5ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 4077)
+Completed 200 OK in 39ms (Views: 29.3ms | ActiveRecord: 0.4ms | Allocations: 5808)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:09:44 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 8.9ms | Allocations: 1501)
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2325)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 5702)
+Completed 200 OK in 57ms (Views: 47.5ms | ActiveRecord: 0.5ms | Allocations: 8264)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 17:09:55 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.8ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3118)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 6429)
+Completed 200 OK in 58ms (Views: 47.1ms | ActiveRecord: 0.5ms | Allocations: 9145)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:09:57 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.0ms | Allocations: 978)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1137)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4170)
+Completed 200 OK in 34ms (Views: 26.8ms | ActiveRecord: 0.3ms | Allocations: 6132)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:10:32 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 1495)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 2316)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 5681)
+Completed 200 OK in 53ms (Views: 42.8ms | ActiveRecord: 0.3ms | Allocations: 8274)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:10:54 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 9.9ms | Allocations: 1495)
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 19.7ms | Allocations: 2316)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 5682)
+Completed 200 OK in 64ms (Views: 52.1ms | ActiveRecord: 0.3ms | Allocations: 8423)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:14:04 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 1446)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1798)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 1887)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.3ms | Allocations: 4643)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+        <%= image_tag "logo.ico",:alt => "Logo", class: "rounded-circle" %>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    fhirvrib
+    </div>
+    <div class="btn-group">
+                <%= link_to root_path, class: "btn btn-secondary dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
+                    perfil
+                <% end %>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <%= image_tag(current_user.avatar.url, :size => "40x40", class: "user_img") if current_user.avatar? %>
+                    <%= link_to "Editar", edit_user_registration_path, class="dropdown-item" %> 
+                    <%= link_to "Cerrar", destroy_user_session_path, class: "dropdown-item" %>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+):
+1:    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+2:        <div>
+3:            <%= image_tag "logo.ico",:alt => "Logo", class: "rounded-circle" %>
+4:        </div>
+5:        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+6:        fhirvrib
+7:        </div>
+8:        <div class="btn-group">
+9:                    <%= link_to root_path, class: "btn btn-secondary dropdown-toggle", data: { toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
+10:                        perfil
+11:                    <% end %>
+12:    
+13:                    <div class="dropdown-menu dropdown-menu-right">
+14:                        <%= image_tag(current_user.avatar.url, :size => "40x40", class: "user_img") if current_user.avatar? %>
+15:                        <%= link_to "Editar", edit_user_registration_path, class="dropdown-item" %> 
+16:                        <%= link_to "Cerrar", destroy_user_session_path, class: "dropdown-item" %>
+17:                    </div>
+18:                </li>
+19:            </ul>
+20:        </div>
+21:    </nav>
+22:    
+23:    
+  
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/layouts/_navbar.html.erb:15: syntax error, unexpected '='
+app/views/dashboard/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:14:19 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 1486)
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 2307)
+  Rendered layout layouts/application.html.erb (Duration: 40.2ms | Allocations: 5690)
+Completed 200 OK in 62ms (Views: 50.5ms | ActiveRecord: 0.4ms | Allocations: 8470)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:14:41 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.6ms | Allocations: 1480)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 2301)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 5656)
+Completed 200 OK in 53ms (Views: 43.5ms | ActiveRecord: 0.3ms | Allocations: 8403)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:15:17 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.3ms | Allocations: 953)
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 30.3ms | Allocations: 5136)
+Completed 200 OK in 51ms (Views: 40.5ms | ActiveRecord: 0.3ms | Allocations: 7885)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:16:34 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.6ms | Allocations: 953)
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1774)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 5136)
+Completed 200 OK in 48ms (Views: 39.5ms | ActiveRecord: 0.2ms | Allocations: 7892)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:18:44 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.7ms | Allocations: 1478)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2299)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 5654)
+Completed 200 OK in 50ms (Views: 40.4ms | ActiveRecord: 0.3ms | Allocations: 8410)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 17:18:46 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.3ms | Allocations: 240)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3117)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 6412)
+Completed 200 OK in 72ms (Views: 62.3ms | ActiveRecord: 0.3ms | Allocations: 9135)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:18:48 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.5ms | Allocations: 965)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1124)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 4155)
+Completed 200 OK in 36ms (Views: 26.8ms | ActiveRecord: 0.4ms | Allocations: 6095)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2022-05-04 17:18:55 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1972)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5094)
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 0.3ms | Allocations: 6923)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:18:56 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 959)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 4148)
+Completed 200 OK in 31ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 5933)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:19:03 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.0ms | Allocations: 1277)
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2098)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 5454)
+Completed 200 OK in 53ms (Views: 42.1ms | ActiveRecord: 0.3ms | Allocations: 8020)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:19:38 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.5ms | Allocations: 1322)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2143)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 5499)
+Completed 200 OK in 52ms (Views: 41.2ms | ActiveRecord: 0.4ms | Allocations: 8264)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:20:20 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 13.1ms | Allocations: 1328)
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 362)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 20.8ms | Allocations: 2155)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 5534)
+Completed 200 OK in 59ms (Views: 48.4ms | ActiveRecord: 0.3ms | Allocations: 8274)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:21:02 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.9ms | Allocations: 955)
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1776)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 5138)
+Completed 200 OK in 51ms (Views: 40.9ms | ActiveRecord: 0.3ms | Allocations: 7897)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:21:16 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 1321)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 357)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2142)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 5498)
+Completed 200 OK in 52ms (Views: 43.4ms | ActiveRecord: 0.3ms | Allocations: 8269)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:23:13 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 4.8ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 71.6ms | Allocations: 13931)
+Completed 200 OK in 82ms (Views: 72.8ms | ActiveRecord: 0.2ms | Allocations: 15857)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:23:28 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.0ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 4107)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 0.3ms | Allocations: 5853)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:23:38 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.1ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 13334)
+Completed 200 OK in 73ms (Views: 64.7ms | ActiveRecord: 0.3ms | Allocations: 15089)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:23:45 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 72.2ms | Allocations: 13782)
+Completed 200 OK in 83ms (Views: 73.3ms | ActiveRecord: 0.3ms | Allocations: 15513)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:23:51 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 877)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 12873)
+Completed 200 OK in 84ms (Views: 75.4ms | ActiveRecord: 0.3ms | Allocations: 14634)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-04 17:24:00 -0500
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 879)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1038)
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | Allocations: 12862)
+Completed 200 OK in 84ms (Views: 74.2ms | ActiveRecord: 0.3ms | Allocations: 14600)
+
+

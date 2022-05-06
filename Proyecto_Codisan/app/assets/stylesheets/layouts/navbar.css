@@ -1,0 +1,32 @@
+.navbar {
+    justify-content: space-around;
+    padding-left: 20px;
+    padding-right: 50px;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.rounded-circle {
+    width: 80px;
+    height: 80px;
+}
+
+.user_img {
+    border-radius: 10px;
+}
+
+.img_avatar{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 2px solid green;
+}
+
+.li_menu{
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 2px solid green;
+}
