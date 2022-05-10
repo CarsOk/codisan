@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :course_users  
+  has_many :courses, through: :has_tools 
 
   mount_uploader:avatar, AvatarUploader
   rolify
