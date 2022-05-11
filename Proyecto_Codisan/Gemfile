@@ -83,4 +83,5 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem "ruby-vips"
 gem 'carrierwave'
+gem 'simple_form'
 

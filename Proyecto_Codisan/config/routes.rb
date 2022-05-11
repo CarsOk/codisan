@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :courses
-  
+
   namespace :admin do
     resources :courses
   end

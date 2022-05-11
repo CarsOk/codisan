@@ -24,7 +24,7 @@
             <li><%= button_to "Inicio", root_path, method: :get, class: "dropdown-item" %> </li>
             <li><%= button_to "Perfil", current_user, method: :get, class: "dropdown-item" %></li>
             <% if current_user.has_role? :admin %>
-                <li><%= button_to "Admin",  users_path, method: :get,  class: "dropdown-item" %></li>
+                <li><%= button_to "Admin", users_path, method: :get,  class: "dropdown-item" %></li>
             <% end %>
             <li><%= button_to "Cerrar", destroy_user_session_path, method: :get, class: "dropdown-item" %></li>
             
