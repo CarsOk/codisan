@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <button id="BotonArea"> 
+        <% if current_user.has_role? :admin %>
+            <%= link_to course.name_course %>
+        <% else %>
+            <%= link_to current_user.course.where(id: current_user.id).collect%>
+        <% end %>
+    </button>
+  </td>
+</tr>

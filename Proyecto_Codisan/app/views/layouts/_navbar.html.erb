@@ -23,21 +23,11 @@
             </li>
             <li><%= button_to "Inicio", root_path, method: :get, class: "dropdown-item" %> </li>
             <li><%= button_to "Perfil", current_user, method: :get, class: "dropdown-item" %></li>
+            <% if current_user.has_role? :admin %>
+                <li><%= button_to "Admin",  users_path, method: :get,  class: "dropdown-item" %></li>
+            <% end %>
             <li><%= button_to "Cerrar", destroy_user_session_path, method: :get, class: "dropdown-item" %></li>
-            <li><%= button_to "Admin",  users_path, method: :get,  class: "dropdown-item" %></li>
-
             
         </ul>
     </div>
 </nav>
-
-
-
-<%# <div class="btn-group">
-  
-  
-    <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button">Another action</button></li>
-    <li><button class="dropdown-item" type="button">Something else here</button></li>
-  
-</div> %>

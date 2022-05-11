@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :course_users  
-  has_many :courses, through: :has_tools 
+  has_and_belongs_to_many :course, :join_table => :course_users
 
   mount_uploader:avatar, AvatarUploader
   rolify
@@ -27,7 +26,7 @@ class User < ApplicationRecord
 
 
   def assign_default_role
-    self.add_role(:admin) if self.roles.blank?
+    self.add_role(:teacher) if self.roles.blank?
   end
 
   
