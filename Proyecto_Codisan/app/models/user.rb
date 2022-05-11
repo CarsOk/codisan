@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_and_belongs_to_many :course, :join_table => :course_users
+  has_many :course_users  
+  has_many :courses, through: :course_users
 
   mount_uploader:avatar, AvatarUploader
   rolify
