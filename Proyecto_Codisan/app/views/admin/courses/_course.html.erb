@@ -1,7 +1,7 @@
 <tr>
   <td>
-    <button id="BotonArea"> 
-        <%= course.name_course %>
-    </button>
+    <%= button_to 'Eliminar' , course, method: :delete, form: {data:{turbo_confirm: 'Desea eliminar esta Area' } }, id:"opctionMenu"%>
+    <%= button_to 'Editar' , edit_admin_course_url(course), :method=> :get,form: {data: {turbo_confirm: 'Desea editar esta Area'} }, id:"opctionMenu"%>
+    <%= button_to course.name_course, admin_course_matters_path(course), method: :get %>
   </td>
 </tr>
