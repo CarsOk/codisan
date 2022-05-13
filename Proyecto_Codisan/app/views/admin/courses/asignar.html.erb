@@ -1,0 +1,11 @@
+Vista con formulario de asignacion
+
+<%= form_tag admin_course_guardar_path(@course) do |f| %>
+
+
+    <%= select_tag 'matter_id', options_for_select(@matters.collect{ |u| [u.name_matter, u.id] }) %>
+
+
+    <%= submit_tag 'Guardar' %>
+
+<% end%>

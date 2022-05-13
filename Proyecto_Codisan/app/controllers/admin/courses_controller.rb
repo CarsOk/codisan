@@ -9,6 +9,18 @@ class Admin::CoursesController < ApplicationController
     end
 
     def show
+        @course = Course.find(params[:id])
+    end
+
+    def asignar
+        @course = Course.find(params[:course_id])
+        @matters = Matter.all
+    end
+
+    def guardar
+        @course = Course.find(params[:course_id])
+        @matter = Matter.find(params[:matter_id])
+        @course.matters << @matter
     end
     
 
@@ -42,8 +54,10 @@ class Admin::CoursesController < ApplicationController
       def destroy
         @course = Course.find(params[:id])
         if @course.destroy
-          flash[:alert] = "Area eliminada correctamente"
-          redirect_to admin_courses_path
+            flash[:alert] = "Curso eliminada correctamente"
+            redirect_to admin_courses_path
+        else 
+            flash[:alert] = "Error al eliminar el curso"
         end
       end
   

@@ -10,9 +10,18 @@ class Admin::Courses::MattersController < ApplicationController
     #     @programa = @area.programas.find(params[:id])
     # end
     
-    # def new
-    #     @programa = @area.programas.new
-    # end
+    def new
+        @matter = @course.matters.new
+    end
+
+    def create
+        @matter = @course.matters.new(matter_params)
+        if @matter.save
+            redirect_to admin_course_matters_path
+        else
+            render :new
+        end
+    end
     
     # def edit
     #     @programa = @area.programas.find(params[:id])
@@ -37,25 +46,22 @@ class Admin::Courses::MattersController < ApplicationController
     #     end
     # end
     
-    # def create
-    #     @programa = @area.programas.new(programa_params)
-    #     if @programa.save 
-    #         flash[:notice] = "Programa creado correctamente"
-    #         redirect_to area_programas_url
-    #     else
-    #       render :new
-    #     end
-    # end
     
     private
     
-    def set_course
-        @course = Course.find(params[:course_id])
-    end
+        def set_course
+            @course = Course.find(params[:course_id])
+        end
         
-        # def programa_params
-        #     params.require(:programa).permit(:nombre)
-        # end
+        def matter_params
+            params.require(:matter).permit(:name_matter)
+        end
+
+        def CourseMatter_params
+            params.require(:CourseMatter).permit(:course_id, :matter_id)
+        end
+
+      
         
         # def programa_params_update
         #     params.require(:programa).permit(:nombre)

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :course_users  
+  has_many :course_users, dependent: :destroy
   has_many :courses, through: :course_users
 
   mount_uploader:avatar, AvatarUploader

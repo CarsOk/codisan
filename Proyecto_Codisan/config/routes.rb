@@ -10,9 +10,17 @@ Rails.application.routes.draw do
 
   namespace :admin do
       resources :courses  do
+        get 'asignar'
+        post 'guardar'
         resources :matters,  module: :courses
       end
   end
+
+  namespace :admin do
+    resources :matters
+  end
+
+
 
 
     
