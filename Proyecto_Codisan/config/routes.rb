@@ -17,6 +17,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :courses  do
+      get 'asignar_user'
+      post 'guardar_user'
+      resources :users,  module: :courses
+    end
+  end
+
+
+  namespace :admin do
     resources :matters
   end
 

@@ -2,13 +2,11 @@ class Admin::Courses::MattersController < ApplicationController
     before_action :authenticate_user!
     before_action :set_course
     
-    def index
-        @matters = @course.matters
-    end
     
-    # def show
-    #     @programa = @area.programas.find(params[:id])
-    # end
+    def show
+        @matter = @course.matters.find(params[:id])
+        @users = @course.users
+    end
     
     def new
         @matter = @course.matters.new
@@ -52,14 +50,11 @@ class Admin::Courses::MattersController < ApplicationController
         def set_course
             @course = Course.find(params[:course_id])
         end
-        
+
         def matter_params
             params.require(:matter).permit(:name_matter)
         end
 
-        def CourseMatter_params
-            params.require(:CourseMatter).permit(:course_id, :matter_id)
-        end
 
       
         
