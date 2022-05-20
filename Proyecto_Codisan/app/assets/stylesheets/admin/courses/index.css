@@ -1,0 +1,15 @@
+#containerCursos{
+    border: 1px solid red;
+}
+#cuadrosCursos{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid blue;
+}
+.botonNuevocurso{
+    margin-left: auto;
+}

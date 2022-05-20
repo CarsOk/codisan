@@ -21,5 +21,7 @@
 }
 
 #boton-edit{
+    color: white;
+    background-color: green;
     text-align: center;
 }
