@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @course] do |f|%>
+
+    <%= f.text_field :name_course, placceholder:'ingrese el nombre del curso' %>
+    <%= f.submit 'Guardar' %>
+
+<% end%>

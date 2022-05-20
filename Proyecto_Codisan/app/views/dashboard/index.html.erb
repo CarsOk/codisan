@@ -1,9 +1,45 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<%= render 'layouts/navbar' %>
 
- <%= button_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"cta"%>
+<div class="container" id="css-container">
+    <div class="row">
 
- <%= button_to "Usuarios", users_path, method: :get, class:"cta"%>
+        <div class="col" id="columna-izquierda">
+         <%= button_to "Inicio", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Estudiantes", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Profesores", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Boletines", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Observador", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Informacion", botonCourse(), method: :get, class:"btn btn-light" %>
+         <%= button_to "Cursos", botonCourse(), method: :get, class:"btn btn-light" %>
+        </div>
 
-<%= button_to "Cerrar sesion", destroy_user_session_path, method: :delete, class:"cta"%>
+        <div class="col">
+            <p id="parrafo">
+                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+            </p>
+        </div>
 
+        <div class="col" id="columna-derecha">
+            <div class="col-derecha-contenido">
+                <%= image_tag "imagenes.jpg", id:"imgs-dashboard"%>
+            </div>
+
+            <div class="col-derecha-contenido">
+                <%= image_tag "imagenes.jpg", id:"imgs-dashboard"%>
+            </div>
+
+            <div class="col-derecha-contenido">
+                <%= image_tag "imagenes.jpg", id:"imgs-dashboard"%>
+            </div>
+            
+            <div class="col-derecha-contenido">
+                <%= image_tag "imagenes.jpg", id:"imgs-dashboard"%>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= render 'layouts/footer' %>

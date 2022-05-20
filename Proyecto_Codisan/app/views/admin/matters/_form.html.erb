@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @matter] do |f| %>
+
+    <%= f.text_field :name_matter, placceholder:'ingrese el nombre de la materia' %>
+    <%= f.submit 'Guardar' %>
+
+<% end%>

@@ -1,0 +1,31 @@
+#css-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#columna-izquierda{
+    text-align: center;
+    box-shadow: 0 0 15px greenyellow;
+    background: green;
+    max-width: 180px;
+    max-height: 405px;
+}
+#parrafo{
+    color: black;
+}
+.btn-light{
+    border-radius: 0px;
+    width: 120px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#columna-derecha{
+    background-color: red;
+}
+.col-derecha-contenido{
+    display: inline-block;
+}
+#imgs-dashboard{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

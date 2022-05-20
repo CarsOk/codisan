@@ -1,0 +1,17 @@
+ <%= form_tag admin_course_guardar_user_path(@course) do |f| %>
+    </thead>
+        <tbody>
+       
+            <% @users.each do |user| %> 
+                <tr>
+                    <td><%= user.document %></td>
+                    <td><%= user.first_name %> <%= user.second_name %></td>
+                    <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
+                </tr>
+            <% end%>
+        
+        </tbody>
+    </table>
+
+<%= submit_tag 'Guardar' %>
+<% end%>

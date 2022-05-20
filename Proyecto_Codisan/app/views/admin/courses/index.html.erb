@@ -1,0 +1,8 @@
+<%= render 'layouts/navbar' %>
+<div class="container" id="containerCursos">
+      <div class="row">
+            <%= render @courses %>
+            <%= button_to "Nuevo curso", new_admin_course_path, method: :get, class:"botonNuevocurso" %> 
+      </div>
+</div>
+<%= render 'layouts/footer' %>

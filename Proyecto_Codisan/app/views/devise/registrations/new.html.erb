@@ -1,6 +1,6 @@
 <section class="container-registrar">
   <article class="article-registrar">
-  <table class="table">
+<table class="table">
     <thead>
       <tr>
         <th colspan="2">
@@ -18,6 +18,7 @@
         <%= f.select :type_document, options_for_select([["Cedula de ciudadania", "CC"], ["Tarjeta de identidad", "TI"], ["Registro Civil", "RC"]])%>
         </div>
       </td>
+
       <td>
         <div class="field">
         <%= f.number_field :document, autofocus: true, placeholder:"Ingrese su # de documento", class:"form-control"%>
@@ -51,7 +52,7 @@
     <tr>
       <td>
         <div class="field">
-        <%= f.number_field :phone_number, autofocus: true, placeholder:"Ingrese su telefono", class:"form-control"%>
+        <%= f.text_field :phone_number, autofocus: true, placeholder:"Ingrese su telefono", class:"form-control"%>
         <div>
       </td>
       <td>
@@ -70,7 +71,8 @@
         <div class="field">
         <%= f.password_field :password, autofocus: true, placeholder:"Confirme su contraseña", class:"form-control"%>
         </div>
-      </td>
+     
+
     </tr>
     <tr>
       <td  id="center-text">

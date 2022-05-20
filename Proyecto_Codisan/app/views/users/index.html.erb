@@ -1,28 +1,25 @@
-
-
-<table class="table">
-  <thead "thead-dark">
-    <tr>
+<%= render 'layouts/navbar' %>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
-      <th scope="col">N° de documento</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Rol</th>
-      <th scope="col">Accion</th>
+        <th scope="col">N° de documento</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %> 
+          <tr>
+              <td><%= user.document %></td>
+              <td><%= user.first_name %> </td>
+              <td><%= user.first_last_name %> </td>
+              <td><%= user.roles.pluck(:name) %></td>
+              <td><%= button_to  'editar', edit_user_path(user), method: :get %></td>
+          </tr>
+      <% end %> 
+    </tbody>
+  </table>
+<%= render 'layouts/footer' %>
 
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %> 
-        <tr>
-            <td><%= user.document %></td>
-            <td><%= user.first_name %> </td>
-            <td><%= user.first_last_name %> </td>
-            <td><%= user.roles.pluck(:name) %></td>
-            <td><%= button_to  'editar', edit_user_path(user), method: :get %></td>
-        </tr>
-    <% end %> 
-  </tbody>
-</table>
-
-<%= button_to "Inicio", root_path, method: :get%>

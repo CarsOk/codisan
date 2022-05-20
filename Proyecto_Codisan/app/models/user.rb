@@ -1,12 +1,16 @@
 class User < ApplicationRecord
+  has_many :course_users, dependent: :destroy
+  has_many :courses, through: :course_users
 
+  mount_uploader:avatar, AvatarUploader
   rolify
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+         
+  has_one_attached :avatar  
 
   after_create :assign_default_role
 
@@ -23,7 +27,7 @@ class User < ApplicationRecord
 
 
   def assign_default_role
-    self.add_role(:student) if self.roles.blank?
+    self.add_role(:admin) if self.roles.blank?
   end
 
   

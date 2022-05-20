@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @course, @matter]  do |f| %>
+
+   <%= f.select :name_matter, Matter.all.map{|m| [m.name_matter, m.id]} %>
+    <%= f.submit 'Guardar' %>
+
+<% end%>
