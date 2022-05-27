@@ -18,9 +18,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :courses  do
-      get 'asignar_user'
+      get 'asignar_user'  
       post 'guardar_user'
-      resources :users,  module: :courses
+      
+      resources :users,  module: :courses do
+        delete 'destroy_user' 
+      end 
     end
   end
 
@@ -28,7 +31,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :matters
   end
-
+  
 
 
 

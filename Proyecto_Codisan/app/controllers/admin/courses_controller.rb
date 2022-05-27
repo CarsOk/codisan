@@ -2,6 +2,7 @@ class Admin::CoursesController < ApplicationController
     before_action :authenticate_user!
     before_action :set_course, only: [:show, :edit, :destroy]
     
+    
     def index
        if current_user.has_role? :admin
             @courses = Course.all 
@@ -91,7 +92,7 @@ class Admin::CoursesController < ApplicationController
         end
 
         def set_user
-            @user = User.find(params[:id])
+          
         end
     
         def course_params

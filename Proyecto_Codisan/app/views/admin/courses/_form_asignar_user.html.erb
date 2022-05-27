@@ -3,13 +3,15 @@
         <tbody>
        
             <% @users.each do |user| %> 
-                <tr>
-                    <td><%= user.document %></td>
-                    <td><%= user.first_name %> <%= user.second_name %></td>
-                    <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
-                    <td><%= check_box_tag "id", user.id %> </td>
-                </tr>
-            <% end%>
+                <% if user.has_role? :student %>
+                    <tr>
+                        <td><%= user.document %></td>
+                        <td><%= user.first_name %> <%= user.second_name %></td>
+                        <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
+                        <td><%= check_box_tag "id", user.id %> </td>
+                    </tr>
+                <% end %>
+            <% end %>
         
         </tbody>
     </table>

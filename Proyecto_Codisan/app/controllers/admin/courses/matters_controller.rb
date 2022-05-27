@@ -6,6 +6,7 @@ class Admin::Courses::MattersController < ApplicationController
     def show
         @matter = @course.matters.find(params[:id])
         @users = @course.users
+        
     end
     
     def new
