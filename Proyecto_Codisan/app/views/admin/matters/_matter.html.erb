@@ -1,7 +1,5 @@
-<tr>
-  <td>
+<div class="col" id="cuadrosMaterias">
     <%= button_to matter.name_matter, admin_matters_url(@course), method: :get %>
     <%= button_to 'Eliminar', admin_matter_url(matter),  method: :delete %> 
     <%= button_to 'Editar', edit_admin_matter_url(matter), :method=> :get, form: {data: {turbo_confirm: 'Desea editar esta Area'} }, id:"opctionMenu"%> 
-  </td>
-</tr>
+</div>

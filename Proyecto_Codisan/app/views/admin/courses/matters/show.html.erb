@@ -1,9 +1,6 @@
 <%= render 'layouts/navbar' %>
-
-<%=  @matter.name_matter %>
-<%=  @course.name_course %>
-
-  
+<h2><%=  @matter.name_matter %>
+<%=  @course.name_course %></h2>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -13,7 +10,6 @@
       </tr>
     </thead>
        <%= render "form_user"%>
-       
   </table>
-  <%= button_to "editar lista de estudiantes", admin_course_users_url(@course, @user), method: :get%> 
+  <%= button_to "Editar lista estudiantes", admin_course_users_url(@course, @user), method: :get%> 
 <%= render 'layouts/footer' %>

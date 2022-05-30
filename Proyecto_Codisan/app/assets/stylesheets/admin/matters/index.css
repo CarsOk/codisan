@@ -1,7 +1,7 @@
-#containerCursos{
+#containerMaterias{
     border: 1px solid red;
 }
-#cuadrosCursos{
+#cuadrosMaterias{
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -10,9 +10,6 @@
     justify-content: center;
     border: 1px solid blue;
 }
-.botonNuevocurso{
-    margin-left: auto;
-}
-#h1Cursos{
+#h1Materias{
     text-align: center;
 }

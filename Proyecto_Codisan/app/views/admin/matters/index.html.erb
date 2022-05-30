@@ -1,12 +1,9 @@
 <%= render 'layouts/navbar' %>
-
-<div class = "div_home">
-      <%= render @matters %>
+<div class="container" id="containerMaterias">
+      <h1 id="h1Materias">Editar materias</h1>
+      <div class="row">
+            <%= render @matters %>
+            <%= button_to "Nueva materia", new_admin_matter_path, method: :get, class:"" %> 
+      </div>
 </div>
-
-<div class = "div_home">
-      <%= button_to "Nueva materia", new_admin_matter_path, method: :get, class: "" %> 
-</div>
-
-
 <%= render 'layouts/footer' %>

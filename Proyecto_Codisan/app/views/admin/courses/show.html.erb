@@ -1,14 +1,10 @@
 <%= render 'layouts/navbar' %>
-    Curso: <%=  @course.name_course %>
-    <table>
-        <tr>
-            <th></th>
-        </tr>
-            <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
-    </table>
-
-    <%= button_to "Agregar materia", admin_course_asignar_path(@course), method: :get %>
-    <%= button_to "Agregar usuario", admin_course_asignar_user_path(@course), method: :get %>
-
+<div class="container" id="agregar">
+    <h1 id="h1Agregar">Agregar estudiantes y materias</h1>
+    <h2>Curso: <%=  @course.name_course %></h2> 
+    <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
+    <%= button_to "Agregar materias", admin_course_asignar_path(@course), method: :get %>
+    <%= button_to "Agregar estudiantes", admin_course_asignar_user_path(@course), method: :get %>
+</div>
 <%= render 'layouts/footer' %>
 
