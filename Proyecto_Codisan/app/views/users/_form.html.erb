@@ -1,8 +1,10 @@
 <div class="form-editar"> 
     <%= form_with(model: @user) do |form| %>
     <%= form.collection_check_boxes :role_ids, Role.all, :id, :name, class:"form-check-input", id:"inlineCheckbox1"%>
-    <%= form.submit "Actualizar" %>
+    <br>
+    <%= form.submit "Guardar" %>
     <% end %>
+
 </div>
 
 

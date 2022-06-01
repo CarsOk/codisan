@@ -23,9 +23,14 @@ class Admin::CoursesController < ApplicationController
     def guardar
         @course = Course.find(params[:course_id])
         @matter = Matter.find(params[:matter_id])
-        @course.matters << @matter
-        redirect_to admin_course_matters_url
-
+        @course.matters << @matter 
+        if @course.save
+            flash[:notice] = "Materia asignada correctamente"
+            redirect_to admin_course_path(@course)
+        else
+            flash[:alert] = "Error al asignar materia"
+            redirect_to admin_course_guardar_path(@course)
+        end
     end
     #<<--
 
@@ -83,16 +88,23 @@ class Admin::CoursesController < ApplicationController
             flash[:alert] = "Error al eliminar el curso"
         end
       end
+
+    # def destroy_matter
+    #     @matter = Matter.find(params[:id])
+    #         if @matter.destroy
+    #             flash[:alert] = "Materia eliminada correctamente"
+    #             redirect_to admin_course_matters_url
+    #         else
+    #             flash[:alert] = "Error al eliminar la materia"
+    #         end
+    # end
+        
   
   
       private
 
         def set_course
-            @course = Course.find(params[:id])
-        end
-
-        def set_user
-          
+          @course = Course.find(params[:id])
         end
     
         def course_params

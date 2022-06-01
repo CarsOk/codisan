@@ -23,8 +23,23 @@ class UsersController < ApplicationController
               render :edit
           end
       end
-  
-  
+
+    #  def new
+    #    @user = User.new
+    #  end     
+     
+    #  def create
+    #    @user = User.new(role_params)
+    #    if @user.save
+    #        redirect_to users_path
+    #        flash[:notice] = "User created successfully"
+    #    else
+    #       flash[:notice] = "User not created"
+    #        render :new
+
+    #    end
+    #  end
+
       private
   
       def role_params_update

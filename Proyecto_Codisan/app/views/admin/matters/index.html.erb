@@ -1,12 +1,13 @@
 <%= render 'layouts/navbar' %>
-
+<h2>Materias</h2>
 <div class = "div_home">
       <%= render @matters %>
 </div>
 
 <div class = "div_home">
-      <%= button_to "Nueva materia", new_admin_matter_path, method: :get, class: "" %> 
+     <%= render "form" %>
 </div>
+<br>
 
 
 <%= render 'layouts/footer' %>

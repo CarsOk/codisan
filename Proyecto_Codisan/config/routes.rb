@@ -12,7 +12,9 @@ Rails.application.routes.draw do
       resources :courses  do
         get 'asignar'
         post 'guardar'
-        resources :matters,  module: :courses
+        resources :matters, module: :courses do
+          delete 'destroy_matter'
+        end
       end
   end
 

@@ -2,13 +2,14 @@
     Curso: <%=  @course.name_course %>
     <table>
         <tr>
-            <th></th>
+            <th>
+                <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
+            </th>
         </tr>
-            <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
     </table>
 
     <%= button_to "Agregar materia", admin_course_asignar_path(@course), method: :get %>
     <%= button_to "Agregar usuario", admin_course_asignar_user_path(@course), method: :get %>
-
+    <%= button_to "materias", admin_course_matters_path(@course), method: :get %>
 <%= render 'layouts/footer' %>
 

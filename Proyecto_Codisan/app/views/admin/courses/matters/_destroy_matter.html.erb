@@ -1,0 +1,22 @@
+<%= form_tag admin_course_matter_destroy_matter_path(@course, @matters), method: :delete do |f| %>
+  
+<table>
+  <thead>
+    <tr>
+      <th>Materia</th>
+    </tr>
+</thead>
+<tbody>
+  <% @matters.each do |matter| %>
+      <tr>
+          <td>
+            <td><%= matter.name_matter %></td>
+            <td><%= check_box_tag "id", matter.id %> </td>
+          </td>
+      </tr>
+    <% end%>
+  </tbody>
+</table>
+
+<%= submit_tag 'Eliminar materia del curso' %>
+<% end%>

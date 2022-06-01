@@ -1,12 +1,20 @@
 class Admin::Courses::MattersController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_course
+    before_action :set_course 
     
-    
+    def index
+        @matters = @course.matters   
+    end
+
     def show
         @matter = @course.matters.find(params[:id])
         @users = @course.users
-        
+    end
+
+    def destroy_matter
+        @matter = @course.matters.find(params[:id])
+        @course = @course.matters.destroy(@matter)
+        redirect_to admin_course_matters_path
     end
     
     def new
@@ -22,28 +30,19 @@ class Admin::Courses::MattersController < ApplicationController
         end
     end
     
-    # def edit
-    #     @programa = @area.programas.find(params[:id])
+    # def edit 
+        # @matter = @course.matters.find(params[:id])
     # end
-    
+
     # def update
-    #     @programa = @area.programas.find(params[:id])
-    #     if @programa.update(programa_params_update)
-    #       redirect_to area_programas_url
-    #     else
-    #       render :edit
-    #     end
+        # @matter = @course.matters.find(params[:id])
+        # if @matter.update(matter_params)
+            # redirect_to admin_course_matters_path
+        # else
+            # render :edit
+        # end
     # end
-    
-    # def destroy
-    #     @programa = @area.programas.find(params[:id])
-    #     if @programa.destroy
-    #       flash[:alert] = "Programa eliminado correctamente"
-    #     redirect_to area_programas_url
-    #     else 
-    #       flash[:alert] = "Error al eliminar el programa"
-    #     end
-    # end
+
     
     
     private
@@ -55,9 +54,6 @@ class Admin::Courses::MattersController < ApplicationController
         def matter_params
             params.require(:matter).permit(:name_matter)
         end
-
-
-      
         
         # def programa_params_update
         #     params.require(:programa).permit(:nombre)

@@ -6,12 +6,13 @@ class Admin::Courses::UsersController < ApplicationController
 
     def index
         @users = @course.users
-       
     end
 
     def destroy_user
         @course = @course.users.destroy(@user)
-        redirect_to admin_course_matters_url
+       if @course.destroy
+           flash[:alert] = "usuario eliminado correctamente"
+       end
     end
 
     private
