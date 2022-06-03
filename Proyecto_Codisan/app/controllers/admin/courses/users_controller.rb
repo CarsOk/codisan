@@ -9,9 +9,10 @@ class Admin::Courses::UsersController < ApplicationController
     end
 
     def destroy_user
-        @course = @course.users.destroy(@user)
-       if @course.destroy
-           flash[:alert] = "usuario eliminado correctamente"
+        if @course.users.destroy(@user)
+           flash[:alert] = "Usuario eliminado correctamente"
+        else
+            flash[:alert] = "Error"
        end
     end
 

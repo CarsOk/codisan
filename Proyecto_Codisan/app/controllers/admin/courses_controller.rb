@@ -1,6 +1,6 @@
 class Admin::CoursesController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_course, only: [:show, :edit, :destroy]
+    before_action :set_course, only: [:show, :edit, :destroy, :update]
     
     
     def index
@@ -15,23 +15,22 @@ class Admin::CoursesController < ApplicationController
     end
 
     #asignar una materia a un curso -->>
-    def asignar
-        @course = Course.find(params[:course_id])
-        @matters = Matter.all
-    end
+    # def asignar
+    #     @course = Course.find(params[:course_id])
+    #     @matters = Matter.all
+    # end
     
-    def guardar
-        @course = Course.find(params[:course_id])
-        @matter = Matter.find(params[:matter_id])
-        @course.matters << @matter 
-        if @course.save
-            flash[:notice] = "Materia asignada correctamente"
-            redirect_to admin_course_path(@course)
-        else
-            flash[:alert] = "Error al asignar materia"
-            redirect_to admin_course_guardar_path(@course)
-        end
-    end
+    # def guardar
+    #     @matter = Matter.find(matter_params)
+    #     @course.matters << @matter
+    #     if @course.save
+    #         flash[:notice] = "Materia asignada correctamente"
+    #         redirect_to admin_course_path(@course)
+    #     else
+    #         flash[:alert] = "Error al asignar materia"
+    #         redirect_to admin_course_guardar_path(@course)
+    #     end
+    # end
     #<<--
 
     #asignar un usuario a un curso -->>
@@ -70,14 +69,13 @@ class Admin::CoursesController < ApplicationController
           @Course = Course.find(params[:id])
       end
   
-      def update
-          @course = Course.find(params[:id])
-          if @course.update(course_params)
-              redirect_to admin_courses_path
-          else
-              render :edit
-          end
-      end
+    def update
+        if @course.update(course_params)
+            redirect_to admin_courses_path
+        else
+            render :edit
+        end
+    end
 
       def destroy
         @course = Course.find(params[:id])
@@ -108,10 +106,15 @@ class Admin::CoursesController < ApplicationController
         end
     
         def course_params
-            params.require(:course).permit(:name_course)
+            params.require(:course).permit(:name_course, matter_ids: [])
         end
 
         def matter_params
-            params.require(:matter).permit(:name_matter)
+           # params.require(:course).permit(name_course:, :matter_ids => [])
         end
+
+
+        
+
+       
 end

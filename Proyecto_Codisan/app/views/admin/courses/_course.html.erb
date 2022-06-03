@@ -1,6 +1,8 @@
 
-          <div class="col"  id="cuadrosCursos">
-              <%= button_to course.name_course, admin_course_path(course), method: :get %>
-              <%= button_to 'Eliminar' , admin_course_url(course), method: :delete, form: {data:{turbo_confirm: 'Desea eliminar este curso' } }%>
-              <%= button_to 'Editar' , edit_admin_course_url(course), :method=> :get,form: {data: {turbo_confirm: 'Desea editar este curso'} }%>
-          </div>                 
+<tr>
+    <td><%= course.id %></td>
+    <td><%= link_to course.name_course, admin_course_path(course), method: :get %></td>
+    <td><%= link_to 'Editar' , edit_admin_course_url(course), :method=> :get,form: {data: {turbo_confirm: 'Desea editar este curso'} }%></td>
+</tr>
+
+           

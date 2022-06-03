@@ -1,10 +1,12 @@
-+Vista con formulario de asignacion
+Vista con formulario de asignacion
 
-<%= form_tag admin_course_guardar_path(@course) do |f| %>
+<%= simple_form_for([:admin, @course], 
+    :url => url_for(:action => 'guardar'),
+    :method => 'post') do |f| %>
 
-
-    <%= select_tag 'matter_id', options_for_select(@matters.collect{ |u| [u.name_matter, u.id] }) %>
-
+    
+    <%= f.association :matters,  as: :check_boxes, label_method: :name_matter, value_method: :id, include_hidden: false %>
+    <br>
 
     <%= submit_tag 'Guardar' %>
 

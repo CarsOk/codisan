@@ -1,6 +1,15 @@
-<%= simple_form_for [:admin, @course] do |f|%>
+<div class= "container-fluid">
+    <div class = "row">
+        <div class = "col-4">
+        <%= simple_form_for [:admin, @course] do |f| %>
 
-    <%= f.text_field :name_course, placceholder:'ingrese el nombre del curso' %>
-    <%= f.submit 'Guardar' %>
+            <%= f.input :name_course %>
+            <%= f.association :matters,  as: :check_boxes, label_method: :name_matter, value_method: :id %>
+           
 
-<% end%>
+            <%= submit_tag 'Guardar' %>
+
+        <% end%>
+    </div>
+<div>
+

@@ -1,4 +1,4 @@
-<%= render 'layouts/navbar' %>
+
     Curso: <%=  @course.name_course %>
     <table>
         <tr>
@@ -8,8 +8,8 @@
         </tr>
     </table>
 
-    <%= button_to "Agregar materia", admin_course_asignar_path(@course), method: :get %>
+    
     <%= button_to "Agregar usuario", admin_course_asignar_user_path(@course), method: :get %>
-    <%= button_to "materias", admin_course_matters_path(@course), method: :get %>
-<%= render 'layouts/footer' %>
+    <%= button_to "Agregar materia", admin_course_asignar_path(@course), method: :get %>
+
 
