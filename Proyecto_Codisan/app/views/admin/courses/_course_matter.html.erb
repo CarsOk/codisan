@@ -1,5 +1,5 @@
 <tr>
-    <td>
-        <%= button_to materia.name_matter, admin_course_matter_url(@course, materia), method: :get %>   
-    </td>
+    <td><%= materia.id %></td>
+    <td> <%= link_to materia.name_matter, admin_course_matter_url(@course, materia), method: :get %> </td>
+    <td><%= link_to "Editar", admin_matters_path(@matters), method: :get %></td>
 </tr>

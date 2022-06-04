@@ -1,12 +1,12 @@
 <tbody>  
-    <% @users.each do |user| %> 
-        <% if user.has_role? :student %>
-            <tr>
-                <td><%= user.document %></td>
-                <td><%= user.first_name %> <%= user.second_name %></td>
-                <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
-            </tr>
-        <% end %>
-    <% end%>
+  <% @users.each do |user| %> 
+    <% if user.has_role? :student %>
+      <tr>
+        <td><%= user.document %></td>
+        <td><%= user.first_name %> <%= user.second_name %></td>
+        <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
+      </tr>
+    <% end %>
+  <% end%>
 </tbody>
   

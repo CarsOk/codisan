@@ -1,28 +1,22 @@
 class Admin::Courses::UsersController < ApplicationController
-    before_action :authenticate_user!
-    before_action :set_course, only: [:index, :destroy_user]
-    before_action :set_user, only: [:destroy_user]
+  before_action :authenticate_user!
+  before_action :set_course, only: [:index, :destroy_user]
+  before_action :set_user, only: []
 
 
-    def index
-        @users = @course.users
-    end
+  def index
+    @users = @course.users
+  end
 
-    def destroy_user
-        if @course.users.destroy(@user)
-           flash[:alert] = "Usuario eliminado correctamente"
-        else
-            flash[:alert] = "Error"
-       end
-    end
-
-    private
+  
+  
+  private
 
     def set_course
-        @course = Course.find(params[:course_id])
+      @course = Course.find(params[:course_id])
     end
 
     def set_user
-        @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 end    
