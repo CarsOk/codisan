@@ -1,6 +1,6 @@
 class Admin::CoursesController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_course, only: [:show, :edit, :destroy]
+    before_action :set_course, only: [:show, :edit, :destroy, :update]
     
     def index
        if current_user.has_role? :admin
@@ -9,71 +9,42 @@ class Admin::CoursesController < ApplicationController
     end 
 
     def show
-        @course = Course.find(params[:id])
         @matters = @course.matters
     end
 
-    #asignar una materia a un curso -->>
-    def asignar
-        @course = Course.find(params[:course_id])
-        @matters = Matter.all
-    end
-    
-    def guardar
-        @course = Course.find(params[:course_id])
-        @matter = Matter.find(params[:matter_id])
-        @course.matters << @matter
-        redirect_to admin_course_matters_url
-
-    end
-    #<<--
-
-    #asignar un usuario a un curso -->>
-    def asignar_user
-        @course = Course.find(params[:course_id])
-            if params[:document]
-              @users = User.where(document: params[:document])
-            else
-                @users = User.all
-             end                                           
-    end
-
-    def guardar_user
-        @course = Course.find(params[:course_id])
-        @user = User.find(params[:id])
-        @course.users << @user
-        
-    end
-    #<<--
-
     def new
+        @users = User.all
         @course = Course.new
     end
 
     def create
         @course = Course.new(course_params)
         if @course.save
+            flash[:alert] = "Curso creado correctamente"
             redirect_to admin_courses_path
         else
+            flash[:alert] = "Error al crear el curso"
             render :new
         end
     end
   
       def edit
          authorize User
-          @Course = Course.find(params[:id])
+         @users = User.all
       end
   
-      def update
-          @course = Course.find(params[:id])
-          if @course.update(course_params)
-              redirect_to admin_courses_path
-          else
-              render :edit
-          end
-      end
+    def update
+        params[:course][:user_ids] ||= []
+        if @course.update(course_params)
+            flash[:alert] = "Curso actualizado correctamente"
+            redirect_to admin_courses_path
+        else
+            flash[:alert] = "Error al actualizar el curso"
+            render :edit
+        end
+    end
 
-      def destroy
+    def destroy
         @course = Course.find(params[:id])
         if @course.destroy
             flash[:alert] = "Curso eliminada correctamente"
@@ -81,24 +52,69 @@ class Admin::CoursesController < ApplicationController
         else 
             flash[:alert] = "Error al eliminar el curso"
         end
-      end
-  
-  
-      private
+    end
 
+    # def destroy_matter
+    #     @matter = Matter.find(params[:id])
+    #         if @matter.destroy
+    #             flash[:alert] = "Materia eliminada correctamente"
+    #             redirect_to admin_course_matters_url
+    #         else
+    #             flash[:alert] = "Error al eliminar la materia"
+    #         end
+    # end
+       #asignar una materia a un curso -->>
+    # def asignar
+    #     @course = Course.find(params[:course_id])
+    #     @matters = Matter.all
+    # end
+    
+    # def guardar
+    #     @matter = Matter.find(matter_params)
+    #     @course.matters << @matter
+    #     if @course.save
+    #         flash[:notice] = "Materia asignada correctamente"
+    #         redirect_to admin_course_path(@course)
+    #     else
+    #         flash[:alert] = "Error al asignar materia"
+    #         redirect_to admin_course_guardar_path(@course)
+    #     end
+    # end
+    #<<--
+
+    #asignar un usuario a un curso -->>
+    # def asignar_user
+    #     @course = Course.find(params[:course_id])
+    #         if params[:document]
+    #           @users = User.where(document: params[:document])
+    #         else
+    #             @users = User.all
+    #          end                                           
+    # end
+
+    # def guardar_user
+    #     @course = Course.find(params[:course_id])
+    #     @user = User.find(params[:id])
+    #     @course.users << @user
+        
+    # end
+    #<<--
+  
+  
+  
+    private
         def set_course
-            @course = Course.find(params[:id])
-        end
-
-        def set_user
-            @user = User.find(params[:id])
+          @course = Course.find(params[:id])
         end
     
         def course_params
-            params.require(:course).permit(:name_course)
+            params.require(:course).permit(:name_course, matter_ids: [], user_ids: [])
         end
 
-        def matter_params
-            params.require(:matter).permit(:name_matter)
-        end
+       
+
+
+        
+
+       
 end
