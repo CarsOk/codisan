@@ -1,17 +1,15 @@
-<%= render 'layouts/navbar' %>
-
-
+<%=  @matter.name_matter %>
 <%=  @course.name_course %>
-    <%=  @matter.name_matter %>
+<%# <%= button_to "editar lista de estudiantes", admin_course_users_url(@course, @user), method: :get%>  
+<th>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">N° de documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+    </tr>
+  </thead>
+  <%= render "form_user"%>     
+</table>
   
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">N° de documento</th>
-        <th scope="col">Nombres</th>
-        <th scope="col">Apellidos</th>
-      </tr>
-       <%= render "form_user"%>
-    
-  
-<%= render 'layouts/footer' %>

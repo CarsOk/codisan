@@ -3,6 +3,7 @@ class Admin::MattersController < ApplicationController
     
     def index
         @matters = Matter.all
+        @matter = Matter.new
     end
     
     def show

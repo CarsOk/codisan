@@ -1,8 +1,22 @@
-<%= render 'layouts/navbar' %>
-<div class="container" id="containerCursos">
-      <div class="row">
-            <%= render @courses %>
-            <%= button_to "Nuevo curso", new_admin_course_path, method: :get, class:"botonNuevocurso" %> 
-      </div>
+
+<div class="container-fluid" >
+  <div class="row">
+    <div class = "col-12">
+      <br>
+      <%= button_to "Nuevo curso", new_admin_course_path, method: :get, class:"botonNuevocurso" %> 
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @courses %>
+        </tbody>
+      </table>
+    <div>
+  </div>
 </div>
-<%= render 'layouts/footer' %>

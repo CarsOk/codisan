@@ -1,14 +1,22 @@
-<%= render 'layouts/navbar' %>
-    Curso: <%=  @course.name_course %>
-    <table>
-        <tr>
-            <th></th>
-        </tr>
-            <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
-    </table>
 
-    <%= button_to "Agregar materia", admin_course_asignar_path(@course), method: :get %>
-    <%= button_to "Agregar usuario", admin_course_asignar_user_path(@course), method: :get %>
-
-<%= render 'layouts/footer' %>
-
+Curso: <%=  @course.name_course %>
+<div class="container-fluid" >
+  <div class="row">
+    <div class = "col-12">
+      <br>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render :partial => "course_matter", :collection => @matters, :as => :materia %>
+        </tbody>
+      </table>
+    <div>
+  </div>
+</div>
