@@ -1,54 +1,62 @@
-<div class="container-gluid" id="css-container">
-    <div class="row">
+<div class="container-fluid" id="css-container">
+  <div class="row" id = "div-row">
 
-        <div class="col" id="columna-izquierda">
-            <%= button_to "Cursos" , botonCourse(), method: :get, class:"btn btn-light" %>
-                <%= button_to "Materias" , admin_matters_path(), method: :get, class:"btn btn-light" %>
-                    <%= button_to "Estudiantes" , users_path(), method: :get, class:"btn btn-light" %>
-                        <%= button_to "Profesores" , botonCourse(), method: :get, class:"btn btn-light" %>
-                            <%= button_to "Boletines" , botonCourse(), method: :get, class:"btn btn-light" %>
-                                <%= button_to "Observador" , botonCourse(), method: :get, class:"btn btn-light" %>
-                                    <%= button_to "Informacion" , botonCourse(), method: :get, class:"btn btn-light" %>
-        </div>
-
-        <div class="col">
-            <p id="parrafo">
-                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you
-                can set $btn-white-space: nowrap to disable text wrapping for each button.
-                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you
-                can set $btn-white-space: nowrap to disable text wrapping for each button.
-                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you
-                can set $btn-white-space: nowrap to disable text wrapping for each button.
-                If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you
-                can set $btn-white-space: nowrap to disable text wrapping for each button.
-            </p>
-        </div>
-
-        <div id="scroll">
-            <div class="col" id="columna-derecha">
-                <div class="container">
-                    <div class="row">
-                        <% @photos.each do |fotos| %>
-                            <div>
-                                <%= image_tag fotos.avatar.url, id:"image"%>
-                            </div>
-                            <div id="h5-img">
-                                <%= fotos.name_photo %>
-                            </div>
-                            <div id="description-photo">
-                                <%= fotos.description %>
-                            </div>
-                            <hr>
-                            <% end %>
-                    </div>
-                </div>
-            </div>
-            <div id="newfoto">
-                <% if current_user.has_role? :admin %>
-                <%= link_to "Fotos", photos_path, method: :get, class:"btn btn-light" %>
-
-                <% end %>
-            </div>
-        </div>
+    <div class="col" id="columna-izquierda">
+      <%= button_to "Cursos", botonCourse(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Materias", admin_matters_path(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Estudiantes", users_path(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Profesores", botonCourse(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Boletines", botonCourse(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Observador", botonCourse(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Informacion", botonCourse(), method: :get, class:"btn btn-light" %>
     </div>
+
+    <div class="col-4" >
+      <div id = "div-parrafo">
+        <h2 id = "h1-parrafo">Mision</h1>
+        <p id="parrafo">
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+        </p>
+      </div>
+      <div id = "div-parrafo" >
+        <h2 id = "h1-parrafo">vision</h1>
+        <p id="parrafo">
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+        </p>
+      </div>
+    </div>
+    <div class="col-2" id="columna-derecha">
+      <div id="scroll">
+        <div class="col" id="columna-derecha">
+          <div class="container">
+            <div class="row">
+              <% @photos.each do |fotos| %>
+                <div>
+                  <%= image_tag fotos.avatar.url, id:"image"%>
+                </div>
+                <div id="h5-img">
+                  <%= fotos.name_photo %>
+                </div>
+                <div id="description-photo">
+                  <%= fotos.description %>
+                </div>
+                <hr>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div id="newfoto">
+          <% if current_user.has_role? :admin %>
+            <%= link_to "Fotos", photos_path, method: :get, class:"btn btn-light" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,77 +1,260 @@
-#css-container {
-    width: 100%;
-    padding-top:40px;
-    padding-bottom:40px;
-    padding-left:40px;
-    padding-right:40px;
-}
+/* dispositivos pequeños */
+@media (max-width:576px) {
 
-#columna-izquierda {
-    text-align: center;
-    box-shadow: 0 0 15px greenyellow;
-    background: green;
-    max-width: 180px;
-    max-height: 405px;
-}
-
-#tabla {
-    text-align: center;
-}
-
-#image {
-    width: 200px;
-    height: 200px;
-    border-radius: 13px;
-    /* border: 1px solid red */
-
-}
-
-#newfoto {
-    width: 140px;
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-#parrafo {
-    color: black;
-    padding: 10px;
-}
-
-.btn-light {
-    border-radius: 0px;
-    width: 120px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#columna-derecha {
-    margin-right: 20px;
-}
-
-.col-derecha-contenido {
-    padding: 10px;
-}
-
-#scroll {
-    height: 500px;
-    width: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-radius: 5px;
-    padding: 5px;
-    padding-top: 20px;
+    #css-container{
+      margin: 0px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  
+    #columna-izquierda{
+      text-align: center;
+      box-shadow: 0 0 15px greenyellow;
+      background: green;
+      max-width: 180px;
+      max-height: 450px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+    }
+  
+    #parrafo{
+      color: black;
+    }
+     
+    .btn-light{
+      border-radius: 0px;
+      width: 120px;
+      margin-top: 10px;   
+      margin-bottom: 10px;
+    }
+      
+    #columna-derecha{ 
+      display: none; 
+      border: 3px solid black;  
+    }
+      
+    .col-derecha-contenido{
+      display: inline-block;
+    }
+      
+    #imgs-dashboard{
+      width: 100%;    
+      margin-top: 10px;   
+      margin-bottom: 10px;
+      }
+      
+    #div-row{
+     display: inline-flex;
+     justify-content: space-around;
+    }
+   
+  }
+  
+  /* dispositivos medianos */
+  @media (max-width:768px) {
+    #css-container{
+      margin: 0px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  
+    #columna-izquierda{
+      text-align: center;
+      box-shadow: 0 0 15px greenyellow;
+      background: green;
+      max-width: 180px;
+      max-height: 450px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+    }
+  
+    #parrafo{
+        color: black;
+    }
+  
+    #div-parrafo{
+      border: 2px solid red;
+    }
+      
+    .btn-light{
+      border-radius: 0px;
+      width: 120px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+      
+    #columna-derecha{  
+      border: 3px solid black;
+    }
+      
+    .col-derecha-contenido{    
+      display: inline-block;
+    }
+      
+    #imgs-dashboard{       
+      width: 100%;       
+      margin-top: 10px;    
+      margin-bottom: 10px;
+    } 
+    #div-row{
+      display: inline-flex;
+      justify-content: space-around;
+     }
+  }
+  
+  /* dispositivos medianos2 */
+  @media (max-width:991px) {
+    #css-container{
+      margin: 0px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  
+    #columna-izquierda{
+      text-align: center;
+      box-shadow: 0 0 15px greenyellow;
+      background: green;
+      max-width: 180px;
+      max-height: 450px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+    }
+  
+    #parrafo{
+        color: black;
+    }
+  
+    #div-parrafo{
+      border: 2px solid red;
+    }
+      
+    .btn-light{
+      border-radius: 0px;
+      width: 120px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+      
+    #columna-derecha{  
+      border: 3px solid black;
+      height: 100%;
+      margin-top: 20px;
+    }
+      
+    .col-derecha-contenido{    
+      display: inline-block;
+    }
+      
+    #imgs-dashboard{       
+      width: 100%;       
+      margin-top: 10px;    
+      margin-bottom: 10px;
+    } 
+    #div-row{
+      display: inline-flex;
+      justify-content: space-around;
+     }
+  }
+  
+    /* dispositivos grandes */
+  @media (min-width:992px) {
+    #css-container{
+      margin: 0px;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  
+    #columna-izquierda{
+      text-align: center;
+      box-shadow: 0 0 15px greenyellow;
+      background: green;
+      max-width: 180px;
+      max-height: 450px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 10px;
+      margin-top: 100px;
+    }
+  
+    #parrafo{
+        color: black;
+    }
+  
+    #div-parrafo{
+     text-align: justify;
+    }
+  
+    #h1-parrafo{
+      text-align: center;
+    }
+      
+    .btn-light{
+      border-radius: 0px;
+      width: 120px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+      
+    #columna-derecha{  
+      /* border: 3px solid black; */
+      height: 100%;
+      
+    }
+      
+    .col-derecha-contenido{    
+      display: inline-block;
+    }
+      
+    #imgs-dashboard{       
+      width: 100%;       
+      margin-top: 10px;    
+      margin-bottom: 10px;
+    } 
     
-}
+    #div-row{
+      display: inline-flex;
+      justify-content: space-around;
+     }
 
-#div-img {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid green;
-    border-radius: 15px;
+     #image {
+        width: 200px;
+        height: 200px;
+        border-radius: 13px;
+        /* border: 1px solid red */
+    
+    }
+    
+    #newfoto {
+        width: 140px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
 
-}
-
-#h5-img {
-    text-align: center;
-}
+    #scroll {
+        height: 500px;
+        width: 300px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-radius: 5px;
+        padding: 5px;
+        padding-top: 20px;
+        
+    }
+    
+    #div-img {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid green;
+        border-radius: 15px;
+    
+    }
+    
+    #h5-img {
+        text-align: center;
+    }
+      
+  }
