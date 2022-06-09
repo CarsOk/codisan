@@ -82,3 +82,4 @@ gem "ruby-vips"
 gem 'carrierwave'
 gem 'simple_form'
 gem 'rails-i18n'
+gem 'letter_opener'

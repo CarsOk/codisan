@@ -1,13 +1,9 @@
-<%= render 'layouts/navbar' %>
-<h2>Materias</h2>
-<div class = "div_home">
-      <%= render @matters %>
+<div class="div_home" id="Form-new_matter">
+      <%= render "form" %>
+</div>
+<br><br>
+<div class="div_home">
+      <%= render @matter %>
 </div>
 
-<div class = "div_home">
-     <%= render "form" %>
-</div>
-<br>
-
-
-<%= render 'layouts/footer' %>
+<br><br>

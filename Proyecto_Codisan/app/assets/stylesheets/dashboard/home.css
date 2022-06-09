@@ -1,3 +1,12 @@
+#css-container {
+    width: 100%;
+    padding-top:40px;
+    padding-bottom:40px;
+    padding-left:40px;
+    padding-right:40px;
+}
+
+#columna-izquierda {
 /* dispositivos pequeños */
 @media (max-width:576px) {
 
@@ -12,6 +21,34 @@
     box-shadow: 0 0 15px greenyellow;
     background: green;
     max-width: 180px;
+    max-height: 405px;
+}
+
+#tabla {
+    text-align: center;
+}
+
+#image {
+    width: 200px;
+    height: 200px;
+    border-radius: 13px;
+    /* border: 1px solid red */
+
+}
+
+#newfoto {
+    width: 140px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#parrafo {
+    color: black;
+    padding: 10px;
+}
+
+.btn-light {
     max-height: 450px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -104,6 +141,37 @@
    }
 }
 
+#columna-derecha {
+    margin-right: 20px;
+}
+
+.col-derecha-contenido {
+    padding: 10px;
+}
+
+#scroll {
+    height: 500px;
+    width: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 5px;
+    padding: 5px;
+    padding-top: 20px;
+    
+}
+
+#div-img {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid green;
+    border-radius: 15px;
+
+}
+
+#h5-img {
+    text-align: center;
+}
+=======
 /* dispositivos medianos2 */
 @media (max-width:991px) {
   #css-container{
