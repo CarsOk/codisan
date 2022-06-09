@@ -1,0 +1,33 @@
+
+
+#list-photo{
+  width: 200px;
+  height: 200px;
+
+}
+
+#form-imagen{
+  padding: 20px;
+  display:flex;
+  
+}
+
+#text-form-index{
+  width: 200px;
+  height: 100px;
+}
+
+#imagen-dashboard{
+  width: 200px;
+  height: 200px;
+}
+
+#list-description{
+ 
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#text-area{
+  resize: none;
+}

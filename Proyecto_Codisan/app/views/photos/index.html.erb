@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @photos.each do |photo| %>
+            <tr>
+              <td>
+                <%= photo.name_photo %>
+              </td>
+              <td>
+                <div id="list-photo">
+                  <%= image_tag photo.avatar.url, id: 'imagen-dashboard' %>
+
+                </div>
+              </td>
+              <td>
+                <div id="list-description">
+                  <%= photo.description  %>
+                </div>
+              </td>
+              <td>
+                <%= link_to "Editar" , edit_photo_path(photo), method: :get %>
+                  <%= link_to "Eliminar" , photo_path(photo), method: :delete%>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+
+      <%= link_to "agregar nueva foto" , new_photo_path(), method: :get %>
+      <br><br>
+    </div>
+  </div>
+</div>
