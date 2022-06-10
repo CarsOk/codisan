@@ -1,6 +1,6 @@
-<div class= "container-fluid">
-  <div class = "row">
-    <div class = "col-4">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col", id="columnaForm">
       <%= simple_form_for [:admin, @course] do |f| %>
         <%= f.input :name_course %>
         <hr>
@@ -28,8 +28,10 @@
               <% end %>
             </tbody>
           </table>
-        <%= submit_tag 'Guardar' %>
+          <div id="centrarbotonGuardarCurso">
+            <%= submit_tag 'Guardar', class:"btn btn-primary", id:"botonGuardarCurso" %>
+          </div>
       <% end%>
+    </div>
   </div>
-
-
+</div>

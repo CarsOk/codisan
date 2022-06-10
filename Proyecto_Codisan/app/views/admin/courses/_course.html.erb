@@ -1,8 +1,8 @@
 
 <tr>
     <td><%= course.id %></td>
-    <td><%= link_to course.name_course, admin_course_path(course), method: :get %></td>
-    <td><%= link_to 'Editar' , edit_admin_course_url(course), :method=> :get,form: {data: {turbo_confirm: 'Desea editar este curso'} }%></td>
+    <td><%= link_to course.name_course, admin_course_path(course), method: :get, id:"quitarLinea" %></td>
+    <td><%= link_to 'Editar' , edit_admin_course_url(course), :method=> :get,form: {data: {turbo_confirm: 'Desea editar este curso'}}, id:"quitarLinea"%></td>
 </tr>
 
            

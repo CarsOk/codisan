@@ -236,7 +236,7 @@
 
     #scroll {
         height: 500px;
-        width: 300px;
+        width: 290px;
         overflow-y: scroll;
         overflow-x: hidden;
         border-radius: 5px;
