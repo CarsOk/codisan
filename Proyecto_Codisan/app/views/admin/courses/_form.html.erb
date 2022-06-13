@@ -1,40 +1,33 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <%= simple_form_for [:admin, @course] do |f| %>
-        <%= f.input :name_course %>
-        <hr>
-        <%= f.association :matters,  as: :check_boxes, label_method: :name_matter, value_method: :id %>
-        <hr>
-    </div>
-
-    <div class="col">
-       <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">N° de documento</th>
-                <th scope="col">Nombres</th>
-                <th scope="col">Apellidos</th>
-                <th scope="col">Accion</th>
-              </tr>
-              </thead>
-            <tbody>
-              <% @users.each do |user| %> 
-                <% if user.has_role? :student %>
-                  <tr>
-                    <td><%= user.document %></td>
-                    <td><%= user.first_name %> <%= user.second_name %></td>
-                    <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
-                    <td><%= check_box_tag "course[user_ids][]", user.id, @course.users.include?(user) %></td> 
-                  </tr>
-                <% end %>
-              <% end %>
-            </tbody>
-          </table>
-      <% end%>
-    </div>
-    <div id="centrarbotonGuardarCurso">
-      <%= submit_tag 'Guardar', class:"btn btn-primary", id:"botonGuardarCurso" %>
-    </div>
-  </div>
-</div>
+      <div class= "container-fluid">
+        <div class = "row">
+          <div class = "col-4">
+            <%= simple_form_for [:admin, @course] do |f| %>
+              <%= f.input :name_course %>
+              <hr>
+              <%= f.association :matters,  as: :check_boxes, label_method: :name_matter, value_method: :id %>
+              <hr>
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">N° de documento</th>
+                      <th scope="col">Nombres</th>
+                      <th scope="col">Apellidos</th>
+                      <th scope="col">Accion</th>
+                    </tr>
+                    </thead>
+                  <tbody>
+                    <% @users.each do |user| %> 
+                      <% if user.has_role? :student %>
+                        <tr>
+                          <td><%= user.document %></td>
+                          <td><%= user.first_name %> <%= user.second_name %></td>
+                          <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
+                          <td><%= check_box_tag "course[user_ids][]", user.id, @course.users.include?(user) %></td> 
+                        </tr>
+                      <% end %>
+                    <% end %>
+                  </tbody>
+                </table>
+              <%= submit_tag 'Guardar' %>
+            <% end%>
+        </div>
