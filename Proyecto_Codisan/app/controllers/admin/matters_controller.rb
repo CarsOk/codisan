@@ -30,19 +30,19 @@ class Admin::MattersController < ApplicationController
     def update
         @matter = Matter.find(params[:id])
         if @matter.update(matter_params)
-          redirect_to admin_matters_path
+            redirect_to admin_matters_path
         else
-          render :edit
+            render :edit
         end
     end
     
     def destroy
         @matter = Matter.find(params[:id])
         if @matter.destroy
-          flash[:alert] = "Materia eliminada correctamente"
+            flash[:alert] = "Materia eliminada correctamente"
         redirect_to admin_matters_path
         else 
-          flash[:alert] = "Error al eliminar la materia"
+            flash[:alert] = "Error al eliminar la materia"
         end
     end
     
