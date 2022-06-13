@@ -1,8 +1,8 @@
 class Course < ApplicationRecord
     has_and_belongs_to_many :users
 
-    has_many :course_matters, dependent: :destroy
-    has_many :matters, through: :course_matters
+    has_and_belongs_to_many :matters
+    
     # has_and_belongs_to_many :users, :join_table => :course_users
 
     accepts_nested_attributes_for :matters

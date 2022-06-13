@@ -11,3 +11,6 @@ p{
 h6{
     color: white;
 }
+.border-bottom{
+    border-bottom: none!important;
+}

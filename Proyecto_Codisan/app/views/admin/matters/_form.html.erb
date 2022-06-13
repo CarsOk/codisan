@@ -1,6 +1,6 @@
-<%= simple_form_for [:admin, @matter] do |f| %>
-
-    <%= f.text_field :name_matter, placeholder:'ingrese el nombre de la materia' %>
-        <%= f.submit 'Guardar' %>
-
-            <% end%>
+<div class="container-fluid", id="guardarMateria">
+  <%= simple_form_for [:admin, @matter] do |f| %>
+  <%= f.text_field :name_matter, placeholder:'Nombre de la materia' %>
+    <%= f.submit 'Guardar' %>
+  <% end%>
+</div>

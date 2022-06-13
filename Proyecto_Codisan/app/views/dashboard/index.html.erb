@@ -2,32 +2,29 @@
   <div class="row" id = "div-row">
 
     <div class="col" id="columna-izquierda">
-      <%= button_to "Cursos", botonCourse(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Materias", admin_matters_path(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Estudiantes", users_path(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Profesores", botonCourse(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Boletines", botonCourse(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Observador", botonCourse(), method: :get, class:"btn btn-light" %>
-      <%= button_to "Informacion", botonCourse(), method: :get, class:"btn btn-light" %>
+      <%= button_to "Cursos", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Materias", admin_matters_path(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Estudiantes", users_path(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Profesores", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Boletines", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Observador", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Informacion", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
     </div>
 
     <div class="col-4" >
       <div id = "div-parrafo">
-        <h2 id = "h1-parrafo">Mision</h1>
+        <h2 id = "h1-parrafo">Misión</h1>
         <p id="parrafo">
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+        <br>
+        Misión Formar jóvenes competentes e integrales capaces de afrontar y resolver los retos del mundo actual, con habilidades y destrezas laborales, tecnológicas, afectivas y sociales que le permitan participar activamente en el mejoramiento y desarrollo socio- económico de su comunidad, región y país.
         </p>
       </div>
+      <br>
       <div id = "div-parrafo" >
-        <h2 id = "h1-parrafo">vision</h1>
+        <h2 id = "h1-parrafo">Visión</h1>
         <p id="parrafo">
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
-          If you dont want the button text to wrap, you can add the .text-nowrap class to the button. In Sass, you can set $btn-white-space: nowrap to disable text wrapping for each button.
+        <br>
+         Visión Aspiramos que en el 2018 El Colegio Distrital Isaac Newton esté tecnológicamente posicionado y se consolide en el Distrito de Barranquilla como una institución líder e inclusiva, que brinde una formación integral a jóvenes capaces de transformar su entorno social y económico al servicio oportuno y eficaz de la región Caribe y del país.
         </p>
       </div>
     </div>
@@ -36,6 +33,11 @@
         <div class="col" id="columna-derecha">
           <div class="container">
             <div class="row">
+              <div id="newfoto">
+                <% if current_user.has_role? :admin %>
+                  <%= button_to "Fotos", photos_path, method: :get, class:"btn btn-light", id:"botonFotos" %>
+                <% end %>
+              </div>
               <% @photos.each do |fotos| %>
                 <div>
                   <%= image_tag fotos.avatar.url, id:"image"%>
@@ -50,11 +52,6 @@
               <% end %>
             </div>
           </div>
-        </div>
-        <div id="newfoto">
-          <% if current_user.has_role? :admin %>
-            <%= link_to "Fotos", photos_path, method: :get, class:"btn btn-light" %>
-          <% end %>
         </div>
       </div>
     </div>
