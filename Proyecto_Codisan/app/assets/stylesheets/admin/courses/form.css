@@ -1,3 +1,13 @@
 .form-check{
     display: flex;
 }
+#botonGuardarCurso{
+    margin: 0;
+    margin-bottom: 10px;
+    background-color: green;
+    border-color: green;
+}
+#centrarbotonGuardarCurso{
+    display: flex;
+    justify-content: center;
+}

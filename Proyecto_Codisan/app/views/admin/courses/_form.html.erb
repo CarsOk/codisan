@@ -1,12 +1,15 @@
-<div class= "container-fluid">
-  <div class = "row">
-    <div class = "col-4">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
       <%= simple_form_for [:admin, @course] do |f| %>
         <%= f.input :name_course %>
         <hr>
         <%= f.association :matters,  as: :check_boxes, label_method: :name_matter, value_method: :id %>
         <hr>
-        <table class="table">
+    </div>
+
+    <div class="col">
+       <table class="table">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">N° de documento</th>
@@ -28,8 +31,10 @@
               <% end %>
             </tbody>
           </table>
-        <%= submit_tag 'Guardar' %>
       <% end%>
+    </div>
+    <div id="centrarbotonGuardarCurso">
+      <%= submit_tag 'Guardar', class:"btn btn-primary", id:"botonGuardarCurso" %>
+    </div>
   </div>
-
-
+</div>

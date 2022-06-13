@@ -29,7 +29,7 @@
               </td>
               <td>
                 <%= link_to "Editar" , edit_photo_path(photo), method: :get %>
-                  <%= link_to "Eliminar" , photo_path(photo), method: :delete%>
+                  <%= button_to "Eliminar" , photo_path(photo), method: :delete%>
               </td>
             </tr>
             <% end %>

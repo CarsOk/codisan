@@ -10,6 +10,8 @@
     justify-content: center;
     border: 1px solid blue;
 }
-.botonNuevocurso{
+#botonNuevoCurso{
     margin-left: auto;
+    background-color: green;
+    border-color: green;
 }
