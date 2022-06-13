@@ -1,3 +1,9 @@
 #menuIzquierdo{
   border-radius: 5px;
 }
+#botonFotos{
+  color: white;
+  border-radius: 5px;
+  background-color: green;
+  border-color: green;
+}
