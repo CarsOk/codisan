@@ -33,6 +33,11 @@
         <div class="col" id="columna-derecha">
           <div class="container">
             <div class="row">
+              <div id="newfoto">
+                <% if current_user.has_role? :admin %>
+                  <%= button_to "Fotos", photos_path, method: :get, class:"btn btn-light", id:"botonFotos" %>
+                <% end %>
+              </div>
               <% @photos.each do |fotos| %>
                 <div>
                   <%= image_tag fotos.avatar.url, id:"image"%>
@@ -47,11 +52,6 @@
               <% end %>
             </div>
           </div>
-        </div>
-        <div id="newfoto">
-          <% if current_user.has_role? :admin %>
-            <%= link_to "Fotos", photos_path, method: :get, class:"btn btn-light" %>
-          <% end %>
         </div>
       </div>
     </div>
