@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_08_214002) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_210758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,13 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_214002) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "course_matters", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "matter_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "course_users", force: :cascade do |t|
     t.integer "course_id"
     t.integer "user_id"
@@ -60,6 +53,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_08_214002) do
     t.string "name_course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "courses_matters", id: false, force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "matter_id", null: false
+    t.index ["course_id", "matter_id"], name: "index_courses_matters_on_course_id_and_matter_id", unique: true
   end
 
   create_table "matters", force: :cascade do |t|
