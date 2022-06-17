@@ -6,33 +6,18 @@ Rails.application.routes.draw do
   resources :courses
   
   namespace :admin do
-    resources :courses
-  end
-
-  namespace :admin do
       resources :courses  do
-        get 'asignar'
-        post 'guardar'
         resources :matters, module: :courses do
-          delete 'destroy_matter'
+          resources :notes,  module: :matters do
+          end 
         end
       end
   end
 
+
   namespace :admin do
-    resources :courses  do
-      get 'asignar_user'  
-      post 'guardar_user'
-      
-      resources :users,  module: :courses do
-        delete 'destroy_user' 
-      end 
+    resources :matters do
     end
-  end
-
-
-  namespace :admin do
-    resources :matters
   end
   
 

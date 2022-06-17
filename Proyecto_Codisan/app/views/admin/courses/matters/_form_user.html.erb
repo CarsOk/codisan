@@ -1,13 +1,15 @@
 <tbody>  
   <h5>Estudiantes</h5>
-  <% @users.each do |user| %> 
-    <% if user.has_role? :student %>
+  <% @notes.each do |nota| %> 
+    
       <tr>
-        <td><%= user.document %></td>
-        <td><%= user.first_name %> <%= user.second_name %></td>
-        <td><%= user.first_last_name %> <%= user.second_last_name %></td> 
+        <td><%= nota.student.document %></td>
+        <td><%= nota.student.first_name %> <%= nota.student.second_name %></td>
+        <td><%= nota.student.first_last_name %> <%= nota.student.second_last_name %></td> 
+        <% @qualification.each do |calificacion| %> 
+          <td><%= calificacion %></td>
+        <% end%>
       </tr>
-    <% end %>
   <% end%>
 </tbody>
   

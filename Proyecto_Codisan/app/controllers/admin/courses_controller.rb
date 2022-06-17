@@ -108,7 +108,7 @@ class Admin::CoursesController < ApplicationController
         end
     
         def course_params
-            params.require(:course).permit(:name_course, matter_ids: [], user_ids: [], teacher_ids: [])
+            params.require(:course).permit(:name_course, matter_ids: [], user_ids: [])
         end
 
 end

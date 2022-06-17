@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_201157) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_15_034553) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,17 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_201157) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "course_matters", force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "matter_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string "name_course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "courses_matters", id: false, force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "matter_id", null: false
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
@@ -65,6 +63,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_201157) do
     t.string "name_matter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.integer "qualification"
+    t.bigint "matter_id", null: false
+    t.bigint "student_id", null: false
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["matter_id"], name: "index_notes_on_matter_id"
+    t.index ["student_id"], name: "index_notes_on_student_id"
+    t.index ["teacher_id"], name: "index_notes_on_teacher_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -119,4 +129,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_201157) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "notes", "matters"
+  add_foreign_key "notes", "users", column: "student_id"
+  add_foreign_key "notes", "users", column: "teacher_id"
 end

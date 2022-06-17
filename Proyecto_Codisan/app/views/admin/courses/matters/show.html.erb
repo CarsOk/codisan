@@ -1,5 +1,6 @@
 <%=  @matter.name_matter %>
 <%=  @course.name_course %>
+<%= button_to 'Calificar',  new_admin_course_matter_note_url(@course,@matter), method: :get%>
 <%# <%= button_to "editar lista de estudiantes", admin_course_users_url(@course, @user), method: :get%>  
 <th>
 <table class="table">
@@ -8,6 +9,7 @@
       <th scope="col">N° de documento</th>
       <th scope="col">Nombres</th>
       <th scope="col">Apellidos</th>
+       <th scope="col">Calificaciones</th>
     </tr>
   </thead>
   <%= render "form_user"%>     

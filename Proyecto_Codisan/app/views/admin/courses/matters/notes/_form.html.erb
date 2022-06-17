@@ -1,0 +1,56 @@
+
+<%= simple_form_for [:admin, :course, :matter, @note] do |f| %>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col-8">N° de documento</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Accion</th>
+      </tr>
+
+  </thead>
+    <tbody>
+      <% @users.each do |user| %> 
+        <% if user.has_role? :student %>
+          <tr>
+            <h5>Estudiantes</h5>
+            <td><%= user.document %></td>
+            <td><%= user.first_name %> <%= user.second_name %></td>
+            <td><%= user.first_last_name %> <%= user.second_last_name %></td>
+            <td><%= check_box_tag "note[student_id]" , user.id%></td>
+          </tr>
+        <% end %> 
+      <% end %>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col-8">N° de documento</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Accion</th>
+      </tr>
+
+  </thead>
+    <tbody>
+      <% @users.each do |user| %> 
+        <% if user.has_role? :teacher %>
+          <tr>
+            <h5>Profesores</h5>
+            <td><%= user.document %></td>
+            <td><%= user.first_name %> <%= user.second_name %></td>
+            <td><%= user.first_last_name %> <%= user.second_last_name %></td>
+            <td><%= check_box_tag "note[teacher_id]" , user.id%></td>
+          </tr>
+        <% end %> 
+      <% end %>
+    </tbody>
+  </table>
+  
+    <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
+<%= f.button :submit %> 
+<% end %>
+<br />

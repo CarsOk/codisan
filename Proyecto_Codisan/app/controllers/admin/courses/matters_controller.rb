@@ -1,6 +1,6 @@
 class Admin::Courses::MattersController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_course 
+    before_action :set_course
     
     def index
         @matters = @course.matters   
@@ -8,7 +8,8 @@ class Admin::Courses::MattersController < ApplicationController
 
     def show
         @matter = @course.matters.find(params[:id])
-        @users = @course.users
+        @notes = @matter.notes.select(:student_id).distinct
+        @qualification = @matter.notes.pluck(:qualification)
     end
 
     def destroy_matter
@@ -18,11 +19,11 @@ class Admin::Courses::MattersController < ApplicationController
     end
     
     def new
-        @matter = @course.matters.new
+        @matter = Matter.new
     end
 
     def create
-        @matter = @course.matters.new(matter_params)
+        params[:course] [:user_ids] ||= [] 
         if @matter.save
             redirect_to admin_course_matters_path
         else

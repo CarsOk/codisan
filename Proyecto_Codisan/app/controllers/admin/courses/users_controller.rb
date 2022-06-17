@@ -13,7 +13,7 @@ class Admin::Courses::UsersController < ApplicationController
   private
 
     def set_course
-      @course = Course.find(params[:course_id])
+      @course = Course.find(params[:id])
     end
 
     def set_user
