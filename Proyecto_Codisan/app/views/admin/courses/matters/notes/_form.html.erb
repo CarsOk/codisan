@@ -49,6 +49,8 @@
       <% end %>
     </tbody>
   </table>
+
+  <%= f.association :task, label_method: :name_activity %>
   
     <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
 <%= f.button :submit %> 

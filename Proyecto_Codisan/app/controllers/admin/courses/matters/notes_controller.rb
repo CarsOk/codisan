@@ -6,6 +6,10 @@ class   Admin::Courses::Matters::NotesController < ApplicationController
     def index
       @notes = Note.all
     end
+
+    def show
+      @note = @matter.notes.find(params[:id])
+    end
   
     def new
       @note = @matter.notes.new
@@ -33,7 +37,7 @@ class   Admin::Courses::Matters::NotesController < ApplicationController
       end
   
       def note_params
-        params.require(:note).permit(:qualification, :matter_id, :teacher_id, :student_id)
+        params.require(:note).permit(:qualification, :matter_id, :teacher_id, :student_id, :task_id)
       end
   
       

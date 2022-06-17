@@ -7,7 +7,7 @@
         <td><%= nota.student.first_name %> <%= nota.student.second_name %></td>
         <td><%= nota.student.first_last_name %> <%= nota.student.second_last_name %></td> 
         <% @qualification.each do |calificacion| %> 
-          <td><%= calificacion %></td>
+          <td><%= link_to calificacion, admin_course_matter_note_path(@course, @matter), method: :get %></td>
         <% end%>
       </tr>
   <% end%>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :courses  do
         resources :matters, module: :courses do
+          resources :tasks, module: :matters do  
+          end
           resources :notes,  module: :matters do
           end 
         end
