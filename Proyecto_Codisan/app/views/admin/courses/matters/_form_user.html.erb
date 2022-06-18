@@ -1,5 +1,5 @@
 <tbody>  
-  <h5>Estudiantes</h5>
+  <h5>notas</h5>
   <% @notes.each do |nota| %> 
     
       <tr>
@@ -7,7 +7,7 @@
         <td><%= nota.student.first_name %> <%= nota.student.second_name %></td>
         <td><%= nota.student.first_last_name %> <%= nota.student.second_last_name %></td> 
         <% @qualification.each do |calificacion| %> 
-          <td><%= link_to calificacion, admin_course_matter_note_path(@course, @matter), method: :get %></td>
+          <td><%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %></td>
         <% end%>
       </tr>
   <% end%>

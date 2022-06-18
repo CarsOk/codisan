@@ -9,7 +9,7 @@ class Admin::Courses::MattersController < ApplicationController
     def show
         @matter = @course.matters.find(params[:id])
         @notes = @matter.notes.select(:student_id).distinct
-        @qualification = @matter.notes.pluck(:qualification)
+        @qualification = @matter.notes.pluck(:qualification, :id)
     end
 
     def destroy_matter

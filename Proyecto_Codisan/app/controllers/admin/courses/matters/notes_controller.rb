@@ -2,6 +2,7 @@ class   Admin::Courses::Matters::NotesController < ApplicationController
     before_action :authenticate_user!
     before_action :set_matter
     before_action :set_course, only: [:new]
+    
   
     def index
       @notes = Note.all
@@ -13,6 +14,7 @@ class   Admin::Courses::Matters::NotesController < ApplicationController
   
     def new
       @note = @matter.notes.new
+      @tasks = @matter.tasks.pluck(:name_activity)
       @users = @course.users
       # @matter = Matter.find(params[:matter_id])
     end
@@ -31,6 +33,8 @@ class   Admin::Courses::Matters::NotesController < ApplicationController
       def set_matter
         @matter = Matter.find(params[:matter_id])
       end
+
+      
 
       def set_course
         @course = Course.find(params[:course_id])

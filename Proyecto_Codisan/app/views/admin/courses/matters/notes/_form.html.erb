@@ -43,14 +43,15 @@
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
-            <td><%= check_box_tag "note[teacher_id]" , user.id%></td>
+            <td><%= check_box_tag "note[teacher_id]" ,  user.id%></td>
           </tr>
         <% end %> 
       <% end %>
     </tbody>
   </table>
+  
 
-  <%= f.association :task, label_method: :name_activity %>
+   <%= f.association :task, collection: @tasks %>
   
     <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
 <%= f.button :submit %> 
