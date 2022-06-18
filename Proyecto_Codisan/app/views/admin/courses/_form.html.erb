@@ -1,12 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-4">
-      <%= simple_form_for [:admin, @course] do |f| %> <%= f.input :name_course
-      %>
-      <hr />
+
+    <div class="col">
+      <%= simple_form_for [:admin, @course] do |f| %> <%= f.input :name_course%>
       <%= f.association :matters, as: :check_boxes, label_method: :name_matter,
       value_method: :id %>
-      <hr />
+    </div>
+
+    <div class="col">
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -15,7 +16,6 @@
             <th scope="col">Apellidos</th>
             <th scope="col">Accion</th>
           </tr>
-
         </thead>
         <tbody>
           <% @users.each do |user| %> <% if user.has_role? :student %>
@@ -33,8 +33,9 @@
           <% end %>
         </tbody>
       </table>
-      
-      <hr />
+      </div>
+
+      <div class="col">
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -53,15 +54,16 @@
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
             <td><%= check_box_tag "course[user_ids][]" , user.id, @course.users.include?(user)%></td>
           </tr>
-          
           <% end %> 
         <% end %>
-
         </tbody>
       </table>
-      <%= f.button :submit %> 
-      <% end %>
-      <br />
     </div>
+
+    <div id="centrar_boton_form">
+      <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
+      <% end %>
+    </div>
+
   </div>
 </div>
