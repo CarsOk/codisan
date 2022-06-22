@@ -1,13 +1,18 @@
-  <tbody>  
-    <h5>Notas</h5>
-    <% @notes.each do |nota| %> 
+<tbody>  
+  <h5>Notas</h5>
+    <% @users.each do |user| %>
+      <% if user.has_role? :student %>
         <tr>
-          <td><%= nota.student.document %></td>
-          <td><%= nota.student.first_name %> <%= nota.student.second_name %></td>
-          <td><%= nota.student.first_last_name %> <%= nota.student.second_last_name %></td> 
+          <td><%= user.document %></td>
+          <td><%= user.first_name %> <%= user.second_name %></td>
+          <td><%= user.first_last_name %> <%= user.second_last_name %></td>
           <% @qualification.each do |calificacion| %> 
-          <td><%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %></td>
+              <% if user.id == calificacion[2] &&  @course.id == calificacion[3]%>
+                <td><%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %></td>
+              <%end%>
           <% end%>
         </tr>
-    <% end%>
-  </tbody>
+      <% end %> 
+    <% end %>
+    
+</tbody>

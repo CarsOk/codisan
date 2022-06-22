@@ -1,50 +1,64 @@
 class Admin::CoursesController < ApplicationController
-    before_action :authenticate_user!
-    before_action :set_course, only: [:show, :edit, :destroy, :update]
+  before_action :authenticate_user!
+  before_action :set_course, only: [:show, :edit, :destroy, :update]
     
-    def index
-        if current_user.has_role? :admin
-            @courses = Course.all 
-        end
-    end 
-
-    def show
-        @matters = @course.matters
-        
+  def index
+    if current_user.has_role? :admin
+      @courses = Course.all 
     end
+  end 
+
+  def show
+    @matters = @course.matters
+  end
 
     def new
-        @users = User.all
+      @students = User.all
+      @users = User.all
+      @document = params[:document]
+      if @document
+        @students = User.where(:document => @document)
+      else
+        @students = User.all
+      end
         @course = Course.new
     end
 
-    def create
-        @course = Course.new(course_params)
-        if @course.save
-            flash[:alert] = "Curso creado correctamente"
-            redirect_to admin_courses_path
-        else
-            flash[:alert] = "Error al crear el curso"
-            render :new
-        end
+  def create
+    @course = Course.new(course_params)
+    if @course.save
+      flash[:alert] = "Curso creado correctamente"
+      redirect_to admin_courses_path
+    else
+      flash[:alert] = "Error al crear el curso"
+      render :new
+    end
+  end
+
+  def edit
+    authorize User
+    @students = User.all
+    @users = User.all
+    @document = params[:document]
+    if @document
+      @students = User.where(:document => @document)
+    else
+      @students = User.all
     end
 
-    def edit
-        authorize User
-        @users = User.all
-    end
+  end
 
-    def update
-        params[:course] [:user_ids] ||= [] 
-        if @course.update(course_params)
-            flash[:alert] = "Curso actualizado correctamente"
-            puts "entro"
-            redirect_to admin_courses_path
-        else
-            flash[:alert] = "Error al actualizar el curso"
-            render :edit
-        end
+  def update
+    params[:course] [:user_ids] ||= [] 
+    if @course.update(course_params)
+      flash[:alert] = "Curso actualizado correctamente"
+      puts "entro"
+      redirect_to admin_courses_path
+    else
+      flash[:alert] = "Error al actualizar el curso"
+      render :edit
     end
+  end
 
     def destroy
         @course = Course.find(params[:id])
