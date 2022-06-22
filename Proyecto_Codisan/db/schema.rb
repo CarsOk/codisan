@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_17_205952) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_22_135346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_17_205952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "task_id"
+    t.bigint "course_id", null: false
+    t.index ["course_id"], name: "index_notes_on_course_id"
     t.index ["matter_id"], name: "index_notes_on_matter_id"
     t.index ["student_id"], name: "index_notes_on_student_id"
     t.index ["task_id"], name: "index_notes_on_task_id"
@@ -140,6 +142,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_17_205952) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "notes", "courses"
   add_foreign_key "notes", "matters"
   add_foreign_key "notes", "users", column: "student_id"
   add_foreign_key "notes", "users", column: "teacher_id"
