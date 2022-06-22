@@ -1,0 +1,16 @@
+#centrar-boton-notas{
+    display: flex;
+    justify-content: center;
+}
+#boton-notas{
+    margin: 0;
+    margin-top: 10px;
+    background-color: green;
+    border-color: green;
+}
+
+
+#contenedor-notas{
+    display: flex;
+    justify-content: center;
+}
