@@ -1,11 +1,7 @@
 <%= simple_form_for [:admin, :course, :matter, @task] do |f| %>
     <%= f.label :name_activity, "Nombre de la actividad" %>
     <%= f.text_field :name_activity %>
-
     <%= f.label :name_activity, "Descripcion de la actividad" %>
     <%= f.text_area(:description_activity, size: '71x10', id: 'text-area')%>
-
     <%= f.submit 'Guardar'%>
-
-
 <%end%>

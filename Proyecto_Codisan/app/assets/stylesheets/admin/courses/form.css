@@ -11,3 +11,11 @@
     display: flex;
     justify-content: center;
 }
+#centrar_boton_form{
+    display: flex;
+    justify-content: center;
+}
+#boton_Crear_Curso{
+    background-color: green;
+    border-color: green;
+}

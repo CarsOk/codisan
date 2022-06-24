@@ -52,6 +52,7 @@
   
 
    <%= f.association :task, collection: @tasks %>
+   <%= f.association :course, label_method: :name_course %>
   
     <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
 <%= f.button :submit %> 
