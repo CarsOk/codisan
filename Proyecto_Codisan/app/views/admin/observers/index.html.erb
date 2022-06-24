@@ -1,0 +1,39 @@
+<h5>Estudiantes</h5>
+<%= form_tag admin_observers_path, method: :get do %>
+  <input name = "document">
+  <%= submit_tag "buscar" %>
+<%end%> 
+
+
+<div class="col">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">N° de documento</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @students.each do |user| %> 
+            <% if user.has_role? :student %>
+              <tr>
+                <% @observadores.each do |estudiante| %> 
+                  <% if user.id == estudiante[1]%>
+                    <td><%= user.document %></td>
+                    <td><%= user.first_name %> <%= user.second_name %></td>
+                    <td><%= user.first_last_name %> <%= user.second_last_name %></td>
+                    <td>
+                      <%= link_to "observador",  admin_observer_path(estudiante[0]), method: :get %>
+                    </td>
+                  <%end%>
+                <%end%>
+              </tr>
+            <% end %> 
+          <% end %>
+        </tbody>
+      </table>
+      <%= button_to "Crear",  new_admin_observer_path(), method: :get %>
+      <%= button_to "Faltas",  admin_faults_path(), method: :get %>
+      </div>

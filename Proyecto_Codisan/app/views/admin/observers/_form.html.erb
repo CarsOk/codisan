@@ -1,0 +1,41 @@
+<%= form_tag new_admin_course_path, method: :get do %>
+  <input name = "document">
+  <%= submit_tag "buscar" %>
+<%end%> 
+
+<%= simple_form_for [:admin, @observer] do |f| %>
+  <div class="col">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">N° de documento</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |user| %>
+          <% if user.has_role? :student %>
+            <tr>
+              <% @observadores.each do |estudiante| %> 
+                <% if user.id != estudiante[1]%>
+                  <td><%= user.document %></td>
+                  <td><%= user.first_name %> <%= user.second_name %></td>
+                  <td><%= user.first_last_name %> <%= user.second_last_name %></td>
+                  <td>
+                    <%= check_box_tag "observer[student_id]", user.id %>
+                  </td>
+              <%end%>
+              <%end%>
+            </tr>
+          <% end %> 
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div id="centrar_boton_form">
+    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
+  </div>
+<% end %>
+   

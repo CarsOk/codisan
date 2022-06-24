@@ -55,6 +55,8 @@
    <%= f.association :course, label_method: :name_course %>
   
     <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
-<%= f.button :submit %> 
-<% end %>
+  <div id="centrar-boton-notas">
+    <%= f.button :submit, class:"btn btn-primary", id:"boton-notas"%> 
+    <% end %>
+  </div>
 <br />

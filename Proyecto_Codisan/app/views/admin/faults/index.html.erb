@@ -1,0 +1,10 @@
+<div class="col-6">
+  <%= render "form" %> 
+</div>
+<% @faults.each do |falta| %> 
+  <%= falta.category %>
+  <%= falta.description %>
+  <%= falta.sanction %>
+<%end%>
+
+ 

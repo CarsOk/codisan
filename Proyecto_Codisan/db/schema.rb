@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_22_135346) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_23_163341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_22_135346) do
     t.index ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id", unique: true
   end
 
+  create_table "fault_observers", force: :cascade do |t|
+    t.text "description"
+    t.bigint "observer_id", null: false
+    t.bigint "fault_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fault_id"], name: "index_fault_observers_on_fault_id"
+    t.index ["observer_id"], name: "index_fault_observers_on_observer_id"
+  end
+
+  create_table "faults", force: :cascade do |t|
+    t.string "category"
+    t.text "description"
+    t.string "sanction"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "matters", force: :cascade do |t|
     t.string "name_matter"
     t.datetime "created_at", null: false
@@ -79,6 +97,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_22_135346) do
     t.index ["student_id"], name: "index_notes_on_student_id"
     t.index ["task_id"], name: "index_notes_on_task_id"
     t.index ["teacher_id"], name: "index_notes_on_teacher_id"
+  end
+
+  create_table "observers", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_observers_on_student_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -142,9 +167,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_22_135346) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "fault_observers", "faults"
+  add_foreign_key "fault_observers", "observers"
   add_foreign_key "notes", "courses"
   add_foreign_key "notes", "matters"
   add_foreign_key "notes", "users", column: "student_id"
   add_foreign_key "notes", "users", column: "teacher_id"
+  add_foreign_key "observers", "users", column: "student_id"
   add_foreign_key "tasks", "matters"
 end

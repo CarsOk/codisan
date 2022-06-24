@@ -1,0 +1,9 @@
+
+<% @fault_observers.each do |observador| %> 
+  <td><%= observador.fault.category %></td>
+  <td><%= observador.description %></td>
+  <td><%= observador.fault.sanction %></td>
+  <hr>
+<% end %>
+
+<%= button_to "crear", new_admin_observer_fault_observer_path(@observer, @fault_observer ), method: :get%>

@@ -1,7 +1,22 @@
-<%= simple_form_for [:admin, :course, :matter, @task] do |f| %>
-    <%= f.label :name_activity, "Nombre de la actividad" %>
-    <%= f.text_field :name_activity %>
-    <%= f.label :name_activity, "Descripcion de la actividad" %>
-    <%= f.text_area(:description_activity, size: '71x10', id: 'text-area')%>
-    <%= f.submit 'Guardar'%>
-<%end%>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" id="elementos-form">
+            <%= simple_form_for [:admin, :course, :matter, @task] do |f| %>
+            <h5 id="h5Tareas">Crear nueva actividad</h5>
+            <br>
+                <%= f.label :name_activity, "Nombre de la actividad:" %>
+                <%= f.text_field :name_activity %>
+                <br>
+                <br>
+                <%= f.label :name_activity, "Descripcion de actividad:" %>
+                <br>
+                <br>
+                <%= f.text_area(:description_activity, id:'text-area')%>
+                <br>
+                <div id="centrar-boton-form-tareas">
+                    <%= f.submit 'Guardar', class:"btn btn-primary", id:"centrar-boton-guardar-tareas"%>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
