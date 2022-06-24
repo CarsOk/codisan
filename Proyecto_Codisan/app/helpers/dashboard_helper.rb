@@ -8,6 +8,14 @@ module DashboardHelper
         end
     end
 
+    def botonObservador()
+        if current_user.has_role? :admin
+            admin_observers_path
+        else
+            observers_path
+        end
+    end
+
     
 
 end
