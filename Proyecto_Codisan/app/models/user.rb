@@ -18,13 +18,6 @@ class User < ApplicationRecord
 
   validates :document,:first_name,:first_last_name,:second_last_name, presence:{ message: 'es requerido.' }, confirmation: true
 
-
-  validate :document_uniqueness
-
-    def document_uniqueness
-      self.errors.add(:base, 'El documento ya esta registrado.') if User.where(:document => self.document).exists?
-    end
-
   mount_uploader:avatar, AvatarUploader
   rolify
 

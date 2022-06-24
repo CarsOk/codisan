@@ -1,20 +1,16 @@
 <div class="container-fluid">
   <div class="row">
-
-    <div class="col">
-
-
+    <div class="col-12">
+    <h5>Buscar estudiantes</h5>
     <%= form_tag new_admin_course_path, method: :get do %>
       <input name = "document">
       <%= submit_tag "buscar" %>
     <%end%> 
-
-
       <%= simple_form_for [:admin, @course] do |f| %> <%= f.input :name_course%>
       <%= f.association :matters, as: :check_boxes, label_method: :name_matter,
       value_method: :id %>
     </div>
-
+    <hr>
     <div class="col">
       <table class="table">
         <thead class="thead-dark">
@@ -27,10 +23,7 @@
         </thead>
         <tbody>
         <h5>Estudiantes</h5>
-
-            
-
-          <% @students.each do |user| %> <% if user.has_role? :student %>
+        <% @students.each do |user| %> <% if user.has_role? :student %>
           <tr>
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
@@ -57,9 +50,9 @@
           </tr>
         </thead>
         <tbody>
+          <h5>Profesores</h5>
           <% @users.each do |user| %> <% if user.has_role? :teacher %>
           <tr>
-            <h5>Profesores</h5>
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
