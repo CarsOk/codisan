@@ -10,7 +10,8 @@
     <%end%> 
 
 
-      <%= simple_form_for [:admin, @course] do |f| %> <%= f.input :name_course%>
+      <%= simple_form_for [:admin, @course] do |f| %> 
+      <%= f.input :name_course %>
       <%= f.association :matters, as: :check_boxes, label_method: :name_matter,
       value_method: :id %>
     </div>

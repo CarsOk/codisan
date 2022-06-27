@@ -9,9 +9,12 @@
       <%= submit_tag "buscar" %>
     <%end%> 
 
+    <%= button_to "regresar", admin_courses_path(@course), method: :get , id:"btn-back", class:"btn btn-primary"%>
 
-      <%= simple_form_for [:admin, @course] do |f| %> <%= f.input :name_course%>
-      <%= f.association :matters, as: :check_boxes, label_method: :name_matter,
+
+      <%= simple_form_for [:admin, @course] do |f| %> 
+      <%= f.input :name_course, label: 'Nombre del Curso :'%>
+      <%= f.association :matters,label:' Materias :', as: :check_boxes, label_method: :name_matter,
       value_method: :id %>
     </div>
 
@@ -27,10 +30,8 @@
         </thead>
         <tbody>
         <h5>Estudiantes</h5>
-
-            
-
-          <% @students.each do |user| %> <% if user.has_role? :student %>
+          <% @students.each do |user| %> 
+            <% if user.has_role? :student %>
           <tr>
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
@@ -57,9 +58,9 @@
           </tr>
         </thead>
         <tbody>
+          <h5>Profesores</h5>
           <% @users.each do |user| %> <% if user.has_role? :teacher %>
           <tr>
-            <h5>Profesores</h5>
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
@@ -72,7 +73,7 @@
     </div>
 
     <div id="centrar_boton_form">
-      <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
+      <%= f.button :submit , 'Crear Curso' , class:"btn btn-primary", id:"boton_Crear_Curso"%> 
       <% end %>
     </div>
 

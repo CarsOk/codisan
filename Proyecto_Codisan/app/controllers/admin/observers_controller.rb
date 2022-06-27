@@ -4,7 +4,6 @@ class Admin::ObserversController < ApplicationController
 
   def index
     @students = User.all
-    @observer = 
     #busqueda de estudiantes por documento
     @document = params[:document]
     if @document
@@ -39,8 +38,6 @@ class Admin::ObserversController < ApplicationController
     end 
   end
 
-  
-
   # def update
   #   @ = .find(params[:id])
   # end
@@ -52,7 +49,6 @@ class Admin::ObserversController < ApplicationController
   # def destroy
   #    = .find(params[:id])
   # end
-
 
   private
 

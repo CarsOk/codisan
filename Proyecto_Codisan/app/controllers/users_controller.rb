@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       end
   
       def edit
-         authorize User
+          authorize User
           @user = User.find(params[:id])
       end
   
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     #  def new
     #    @user = User.new
     #  end     
-     
+    
     #  def create
     #    @user = User.new(role_params)
     #    if @user.save
@@ -40,8 +40,18 @@ class UsersController < ApplicationController
     #    end
     #  end
 
+    def destroy
+      
+          if @user.destroy
+              flash[:alert] = "usuario eliminado"
+              redirect_to users_path
+          else
+              render :edit
+          end
+    end
+
       private
-  
+
       def role_params_update
         params.require(:user).permit({role_ids:[]})
       end

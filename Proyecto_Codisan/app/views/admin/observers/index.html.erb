@@ -1,10 +1,10 @@
+<%= button_to 'atras', root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
+
 <h5>Estudiantes</h5>
 <%= form_tag admin_observers_path, method: :get do %>
   <input name = "document">
   <%= submit_tag "buscar" %>
 <%end%> 
-
-
 <div class="col">
       <table class="table">
         <thead class="thead-dark">

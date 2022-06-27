@@ -3,7 +3,8 @@ class Admin::Courses::MattersController < ApplicationController
     before_action :set_course
     
     def index
-        @matters = @course.matters   
+        @matters = @course.matters  
+        
     end
 
     def show

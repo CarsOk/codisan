@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-12">
       <%= button_to "Agregar nueva foto" , new_photo_path(), method: :get, class:"btn btn-primary", id:"botonesFotos" %>
+      <%= button_to "atras", root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
       <table class="table" id="table">
         <thead>
           <tr>
@@ -29,7 +30,7 @@
               </td>
               <td>
                 <%= button_to "Editar" , edit_photo_path(photo), method: :get, class:"btn btn-primary", id:"botonesFotos" %>
-                <%= button_to "Eliminar" , photo_path(photo), method: :delete, class:"btn btn-primary", id:"botonesFotos"%>
+                <%= button_to "Eliminar" , photo_path(photo), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete, class:"btn btn-primary", id:"botonesFotos" %>
               </td>
             </tr>
             <% end %>

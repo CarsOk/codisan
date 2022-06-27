@@ -1,6 +1,7 @@
 <div class="container-fluid"> 
   <%=  @matter.name_matter %>
   <%=  @course.name_course %>
+  <%= button_to "atras" ,admin_course_path(@course), method: :get, class: "btn btn-primary", id:"btn-back" %>
   <%= button_to 'Calificar',  new_admin_course_matter_note_url(@course, @matter), method: :get,class:"btn btn-primary", id:"botonesMateriaCursoAdmin"%>
   <%= button_to 'Actividades',  admin_course_matter_tasks_url(@course,@matter), method: :get,class:"btn btn-primary", id:"botonesMateriaCursoAdmin"%>
   <%# <%= button_to "editar lista de estudiantes", admin_course_users_url(@course, @user), method: :get%>  

@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 
+  validates :document, length: { maximum: 10 }
+  validates :document, uniqueness: true
+  validates :name_course, uniqueness: true
+
   HUMANIZED_ATTRIBUTES = {
     document: " El documento",
     first_name: "Primer Nombre",
@@ -15,15 +19,7 @@ class User < ApplicationRecord
     
   end
 
-
   validates :document,:first_name,:first_last_name,:second_last_name, presence:{ message: 'es requerido.' }, confirmation: true
-
-
-  validate :document_uniqueness
-
-    def document_uniqueness
-      self.errors.add(:base, 'El documento ya esta registrado.') if User.where(:document => self.document).exists?
-    end
 
   mount_uploader:avatar, AvatarUploader
   rolify
@@ -35,7 +31,6 @@ class User < ApplicationRecord
   has_many :notes
   has_many :matters, through: :notes
 
- 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
