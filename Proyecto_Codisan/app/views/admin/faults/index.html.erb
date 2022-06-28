@@ -1,10 +1,32 @@
-<div class="col-6">
-  <%= render "form" %> 
+<div class="container-fluid">
+  <div id= "center-form">
+    <div class="col-6">
+      <%= render "form" %> 
+    </div>
+  </div>
+
+    <div class="col">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Sancion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @faults.each do |falta| %> 
+            <tr>
+              <td> <%= falta.category %></td>
+              <td><%= falta.description %></td>
+              <td> <%= falta.sanction %></td> 
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    
 </div>
-<% @faults.each do |falta| %> 
-  <%= falta.category %>
-  <%= falta.description %>
-  <%= falta.sanction %>
-<%end%>
+
 
  
