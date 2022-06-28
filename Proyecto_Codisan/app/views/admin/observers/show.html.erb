@@ -1,21 +1,9 @@
-<div class="container_observadores">
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Codigo de cagtegoria</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Sancion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @fault_observers.each do |observador| %> 
-        <tr> 
-              <td><%= observador.fault.category %></td>
-              <td><%= observador.description %></td>
-            <td><%= observador.fault.sanction %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= button_to "crear", new_admin_observer_fault_observer_path(@observer, @fault_observer ), method: :get, class:"btn btn-primary", id:"boton-faltas"%>
-</div>
+
+<% @fault_observers.each do |observador| %> 
+  <td><%= observador.fault.category %></td>
+  <td><%= observador.description %></td>
+  <td><%= observador.fault.sanction %></td>
+  <hr>
+<% end %>
+
+<%= button_to "crear", new_admin_observer_fault_observer_path(@observer, @fault_observer ), method: :get%>

@@ -1,3 +1,8 @@
+<%= form_tag new_admin_course_path, method: :get do %>
+  <input name = "document">
+  <%= submit_tag "buscar" %>
+<%end%> 
+
 <%= simple_form_for [:admin, @observer] do |f| %>
   <div class="col">
     <table class="table">
@@ -36,7 +41,7 @@
     </table>
   </div>
   <div id="centrar_boton_form">
-    <%= f.button :submit,  class:"btn btn-primary", id:"boton-notas"%> 
+    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
   </div>
 <% end %>
    

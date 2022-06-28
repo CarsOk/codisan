@@ -1,16 +1,7 @@
-<%= simple_form_for [:admin, @fault] do |f| %>
-
-  <div class= "col-10", id="text-field">
-    <%= f.label "categoria" %>
-    <%= f.text_field :category, placeholder: "L1"%>
-     <%= f.label "Tipo de sancion" %>
-    <%= f.text_field :sanction, placeholder: "2 Horas"%>
-  </div>
-  <%= f.label "Descripcion de la falta" %>
-  <div class= "col-12">
-   <%= f.text_area(:description, size: '71x10', id: 'text-area')%>
-  </div>
-  
+<%= simple_form_for [:admin, @fault] do |f| %> 
+  <%= f.text_field :category %>
+  <%= f.text_area(:description, size: '71x10', id: 'text-area')%>
+  <%= f.text_field :sanction %>
   <div id="centrar_boton_form">
     <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
   </div>
