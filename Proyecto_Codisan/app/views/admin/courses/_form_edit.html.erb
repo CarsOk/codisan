@@ -1,14 +1,18 @@
-<%= simple_form_for [:admin, @course] do |f| %> 
+  <%= simple_form_for [:admin, @course] do |f| %> 
   <div id="columna-form">
-    <div class="col-2">
+    <div class="col" id="name_Course">
       <%= f.input :name_course, label: "Nombre del curso" %>
       <%= f.association :matters, as: :check_boxes, label_method: :name_matter, value_method: :id, label: "Agregar materias", id: "form-matter" %>
     </div>
   </div>
+  
+  <div id="centrar_boton_form">
+    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
+  </div>
 
   <div id="columna-form">
-    <div id="row-form">
-      <div class="col-6">
+    <div class="row" id="row-form">
+      <div class="col">
         <h5>Estudiantes</h5>
         <table class="table">
           <thead class="thead-dark">
@@ -37,7 +41,7 @@
         </table>
       </div>
 
-      <div class="col-6">
+      <div class="col">
         <h5>Profesores</h5>
           <table class="table">
             <thead class="thead-dark">
@@ -53,7 +57,6 @@
               <% @users.each do |user| %>
                 <% if user.has_role? :teacher %>
                   <tr>
-                    <h5>Profesores</h5>
                     <td><%= user.document %></td>
                     <td><%= user.first_name %> <%= user.second_name %></td>
                     <td><%= user.first_last_name %> <%= user.second_last_name %></td>
@@ -65,10 +68,5 @@
           </table>
       </div>
     </div>
-  </div>
-  
-  <div id="centrar_boton_form">
-    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
-  </div>
-  
+  </div> 
 <% end %>

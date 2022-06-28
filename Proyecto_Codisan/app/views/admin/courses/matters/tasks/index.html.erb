@@ -1,6 +1,6 @@
 <div class="container-fluid">
-    <%= button_to "regresar" , admin_course_matter_path(@course,@matter), method: :get %>
-    <%= button_to 'crear actividad',  new_admin_course_matter_task_url(@matter), method: :get, class:"btn btn-primary", id:"centrar-boton-tareas"%>
+    <%= button_to "Volver" , admin_course_matter_path(@course,@matter), method: :get, class:"btn btn-primary", id:"centrar-boton-tareas"%>
+    <%= button_to 'Crear actividad',  new_admin_course_matter_task_url(@matter), method: :get, class:"btn btn-primary", id:"centrar-boton-tareas"%>
     <table class="table" >
         <thead>
             <tr>

@@ -6,13 +6,12 @@
           <td><%= user.document %></td>
           <td><%= user.first_name %> <%= user.second_name %></td>
           <td><%= user.first_last_name %> <%= user.second_last_name %></td>
-          <% @qualification.each do |calificacion| %> 
+          <td><% @qualification.each do |calificacion| %> 
               <% if user.id == calificacion[2] &&  @course.id == calificacion[3]%>
-                <td><%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %></td>
-              <%end%>
+                <%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %>
+              <%end%></td>
           <% end%>
         </tr>
       <% end %> 
     <% end %>
-    
 </tbody>

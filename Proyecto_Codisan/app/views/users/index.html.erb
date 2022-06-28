@@ -1,26 +1,25 @@
-<%= button_to 'atras', root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">N° de documento</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Rol</th>
-      <th scope="col">Accion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %> 
-            <tr>
-                <td><%= user.document %></td>
-                <td><%= user.first_name %> </td>
-                <td><%= user.first_last_name %> </td>
-                <td><%= user.roles.pluck(:name) %></td>
-                <td><%= button_to  'editar', edit_user_path(user), method: :get, class:"btn btn-primary", id:"botonEditarUsuario" %></td>
-            </tr>
-    <% end %>
-    
-  </tbody>
-</table>
-
+<div class="container-fluid">
+  <%= button_to 'Volver', root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">N° de documento</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %> 
+              <tr>
+                  <td><%= user.document %></td>
+                  <td><%= user.first_name %> </td>
+                  <td><%= user.first_last_name %> </td>
+                  <td><%= user.roles.pluck(:name) %></td>
+                  <td><%= button_to  'editar', edit_user_path(user), method: :get, class:"btn btn-primary", id:"botonEditarUsuario" %></td>
+              </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

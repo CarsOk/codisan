@@ -1,4 +1,3 @@
-<%= button_to "atras", admin_course_matter_path(@course, @matter), method: :get, class: "btn btn-primary", id:"btn-back" %>
 <%= simple_form_for [:admin, :course, :matter, @note] do |f| %>
   <table class="table">
     <thead class="thead-dark">
@@ -56,7 +55,9 @@
   
     <%= f.input :qualification,label: 'Calificación', autofocus: true, placeholder: 'calificacion', required: true %>
   <div id="centrar-boton-notas">
-    <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas"%> 
+    <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas"%>
     <% end %>
+
+    <%= button_to "Volver", admin_course_matter_path(@course, @matter), method: :get, class: "btn btn-primary", id:"boton-notas" %> 
   </div>
 <br />

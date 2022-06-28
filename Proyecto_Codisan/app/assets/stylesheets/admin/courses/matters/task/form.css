@@ -17,6 +17,9 @@
 #centrar-boton-guardar-tareas{
     margin: 0;
     margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: green;
     border-color: green;
 }
