@@ -1,0 +1,11 @@
+#botonObservador{
+    margin: 0;
+    margin: 5px;
+    background-color: green;
+    border-color: green;
+}
+#centrarBotonesObservador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

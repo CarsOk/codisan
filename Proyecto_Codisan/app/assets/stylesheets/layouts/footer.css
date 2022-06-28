@@ -14,3 +14,6 @@ h6{
 .border-bottom{
     border-bottom: none!important;
 }
+#espacios{
+    margin: 10px;
+}

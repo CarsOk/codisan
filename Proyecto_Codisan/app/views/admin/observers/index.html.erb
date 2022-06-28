@@ -1,11 +1,9 @@
-<h5>Estudiantes</h5>
-<%= form_tag admin_observers_path, method: :get do %>
-  <input name = "document">
-  <%= submit_tag "buscar" %>
-<%end%> 
-
-
-<div class="col">
+<div class="container-fluid">
+      <h5>Buscar estudiante</h5>
+      <%= form_tag admin_observers_path, method: :get do %>
+        <input name = "document">
+        <%= submit_tag "buscar" %>
+      <%end%> 
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -34,6 +32,8 @@
           <% end %>
         </tbody>
       </table>
-      <%= button_to "Crear",  new_admin_observer_path(), method: :get %>
-      <%= button_to "Faltas",  admin_faults_path(), method: :get %>
-      </div>
+      <div id="centrarBotonesObservador">
+        <%= button_to "Observación",  new_admin_observer_path(), method: :get, class:"btn btn-primary", id:"botonObservador" %>
+        <%= button_to "Faltas",  admin_faults_path(), method: :get, class:"btn btn-primary", id:"botonObservador" %>
+      </div>      
+</div>
