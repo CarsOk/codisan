@@ -19,3 +19,19 @@
     background-color: green;
     border-color: green;
 }
+
+#row-form{
+    display: flex;
+    margin-top: 20px;
+}
+
+#columna-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#container-form-course{
+    margin: 10px;
+}
+

@@ -11,10 +11,11 @@
 
   </thead>
     <tbody>
+    <h5>Estudiantes</h5>
       <% @users.each do |user| %> 
         <% if user.has_role? :student %>
           <tr>
-            <h5>Estudiantes</h5>
+            
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
@@ -36,6 +37,8 @@
 
   </thead>
     <tbody>
+    
+    <h5>Profesores</h5>
       <% @users.each do |user| %> 
         <% if user.has_role? :teacher %>
           <tr>
@@ -51,10 +54,10 @@
   </table>
   
 
-   <%= f.association :task, collection: @tasks %>
-   <%= f.association :course, label_method: :name_course %>
+   <%= f.association :task, collection: @tasks, label: "Tarea"%>
+   <%= f.association :course, label_method: :name_course, label: "Curso"%>
   
-    <%= f.input :qualification, autofocus: true, placeholder: 'calificacion' %>
+    <%= f.input :qualification, autofocus: true, placeholder: 'calificacion', label: "Calificacion" %>
   <div id="centrar-boton-notas">
     <%= f.button :submit, class:"btn btn-primary", id:"boton-notas"%> 
     <% end %>
