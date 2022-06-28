@@ -1,8 +1,21 @@
 <div class="container-fluid">
     <%= button_to 'crear actividad',  new_admin_course_matter_task_url(@matter), method: :get, class:"btn btn-primary", id:"centrar-boton-tareas"%>
-    <% @tasks.each do |tarea| %> 
-        <%= tarea.name_activity %>
-        <%= tarea.description_activity %>
-        <%= tarea.created_at %>
-    <%end%>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th scope="col">Nombre actividad</th>
+                <th scope="col">Descripción actividad</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @tasks.each do |tarea| %> 
+                <tr>
+                    <td> <%= tarea.name_activity %> </td>
+                    <td> <%= tarea.description_activity %> </td>
+                    <td> <%= tarea.created_at %> </td>
+                </tr>
+            <%end%>
+        </tbody>
+    </table>
 </div>

@@ -15,7 +15,6 @@ class User < ApplicationRecord
     
   end
 
-
   validates :document,:first_name,:first_last_name,:second_last_name, presence:{ message: 'es requerido.' }, confirmation: true
 
   mount_uploader:avatar, AvatarUploader
