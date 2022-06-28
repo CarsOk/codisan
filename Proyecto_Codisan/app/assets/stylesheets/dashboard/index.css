@@ -1,6 +1,9 @@
 #menuIzquierdo{
   border-radius: 5px;
 }
+#div-row{
+  height: 600px;
+}
 #botonFotos{
   color: white;
   border-radius: 5px;
