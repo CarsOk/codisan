@@ -1,9 +1,3 @@
-<%= button_to "atras", admin_observers_url(@observer), method: :get, class: "btn btn-primary", id: "btn-back" %>
-
-<%= form_tag new_admin_course_path, method: :get do %>
-  <input name = "document">
-  <%= submit_tag "buscar" %>
-<%end%> 
 <%= simple_form_for [:admin, @observer] do |f| %>
   <div class="col">
     <table class="table">

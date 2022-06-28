@@ -1,10 +1,13 @@
 #centrar-boton-notas{
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 #boton-notas{
     margin: 0;
     margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     background-color: green;
     border-color: green;
 }

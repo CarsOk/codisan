@@ -15,8 +15,9 @@
                 <br>
                 <div id="centrar-boton-form-tareas">
                     <%= f.submit 'Guardar', class:"btn btn-primary", id:"centrar-boton-guardar-tareas"%>
+                    <%end%>
+                   <%= button_to "volver", admin_course_matter_tasks_path, method: :get, class:"btn btn-primary", id:"centrar-boton-guardar-tareas"%> 
                 </div>
-            <%end%>
         </div>
     </div>
 </div>

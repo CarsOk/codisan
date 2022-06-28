@@ -1,7 +1,4 @@
-<div class="container-fluid", id="guardarMateria">
   <%= simple_form_for [:admin, @matter] do |f| %>
   <%= f.text_field :name_matter, placeholder:'Nombre de la materia' %>
     <%= f.submit 'Guardar' %>
   <% end%>
-  <%= link_to "atras", root_path, id:"btn-back", class:"btn - btn-primary" %>
-</div>

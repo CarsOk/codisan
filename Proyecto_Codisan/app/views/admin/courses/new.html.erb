@@ -1,10 +1,10 @@
-<div id="container-form-course">
+<div class="container-fluid">
+  <%= button_to "Volver" ,  admin_courses_path(@course), method: :get, class: "btn btn-primary", id:"botonVolver" %>
   <%= form_tag new_admin_course_path, method: :get do %>
-    <label>Buscar Estudiante</label>
+    <label>Buscar estudiante</label>
     <input name = "document", placeholder="documento">
     <%= submit_tag "buscar" %>
   <%end%> 
-    
   <%= render "form" %>
 </div>
 

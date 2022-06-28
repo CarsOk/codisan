@@ -1,9 +1,8 @@
 <div class="container-fluid" >
   <div class="row">
-    <div class = "col-12">
-      <br>
+    <div class = "col">
+      <%= button_to "Volver", root_path, method: :get ,class:"btn btn-primary", id:"btn-back"%>
       <%= button_to "Nuevo curso", new_admin_course_path, method: :get, class:"btn btn-primary", id:"botonNuevoCurso"%> 
-      <%= button_to "regresar", root_path, method: :get ,class:"btn btn-primary", id:"btn-back"%>
   </article>
       <hr>
       <table class="table table-striped">
