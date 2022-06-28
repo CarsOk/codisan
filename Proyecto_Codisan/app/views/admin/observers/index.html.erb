@@ -1,11 +1,19 @@
-<h5>Estudiantes</h5>
-<%= form_tag admin_observers_path, method: :get do %>
-  <input name = "document">
-  <%= submit_tag "buscar" %>
-<%end%> 
-
-
-<div class="col">
+<div class="container_observadores">
+  
+  <div class="row_observadores">
+    <div class="row_buscardor">
+      <h5  id = "h5">Estudiantes</h5>
+    <%= form_tag admin_observers_path, method: :get do %>
+      <input name = "document", placeholder = "Documento">
+      <%= submit_tag "buscar" %>
+    <%end%> 
+    </div>
+    <div class="row_buscardor">
+      <%= button_to "Crear Observador",  new_admin_observer_path(), method: :get, id: "boton-crear",  class:"btn btn-primary" %>
+      <%= button_to "Crear Faltas",  admin_faults_path(), method: :get, id: "boton-crear",  class:"btn btn-primary" %>
+     </div>
+  </div>
+ 
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -25,7 +33,7 @@
                     <td><%= user.first_name %> <%= user.second_name %></td>
                     <td><%= user.first_last_name %> <%= user.second_last_name %></td>
                     <td>
-                      <%= link_to "observador",  admin_observer_path(estudiante[0]), method: :get %>
+                      <%= link_to "observador",  admin_observer_path(estudiante[0]), method: :get, id:"quitarLinea"%>
                     </td>
                   <%end%>
                 <%end%>
@@ -34,6 +42,5 @@
           <% end %>
         </tbody>
       </table>
-      <%= button_to "Crear",  new_admin_observer_path(), method: :get %>
-      <%= button_to "Faltas",  admin_faults_path(), method: :get %>
+      
       </div>
