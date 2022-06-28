@@ -1,7 +1,12 @@
-<div class="container-fluid">
-  <div class="row">
-    <h5>Estudiantes</h5>
-    <div class="col">
+<div class="container_observadores">
+   <div class="row_buscardor">
+      <h5 id = "h5">Estudiantes</h5>
+      <%= form_tag admin_observers_path, method: :get do %>
+        <input name = "document", placeholder = "Documento">
+        <%= submit_tag "buscar" %>
+      <%end%> 
+    </div>
+    <div class="col-12">
         <%= render "form" %>    
     </div>
   </div>

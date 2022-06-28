@@ -54,7 +54,7 @@
     <%= f.association :task, label: 'Actividad', collection: @tasks %>
     <%= f.association :course, label: 'Curso', label_method: :name_course %>
   
-    <%= f.input :qualification,label: 'Calificaion', autofocus: true, placeholder: 'calificacion', required: true %>
+    <%= f.input :qualification,label: 'Calificación', autofocus: true, placeholder: 'calificacion', required: true %>
   <div id="centrar-boton-notas">
     <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas"%> 
     <% end %>

@@ -1,0 +1,30 @@
+.container_observadores{
+    margin: 10px;
+}
+
+.row_observadores{
+    margin:10px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container_observadores h5{
+    margin-right : 10px;
+}
+
+.row_buscardor{
+    display: inline-flex;
+}
+
+#boton-crear{
+    margin-right: 10px;
+    background-color: green;
+    border-color: green;
+}
+
+#boton-faltas{
+    display: flex;
+    align-items: center;
+    background-color: green;
+    border-color: green;    
+}
