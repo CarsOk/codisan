@@ -1,7 +1,15 @@
 <%= simple_form_for [:admin, :observer, @observer] do |f| %>
+
+  <div class="col-6">
+    <%= f.association :fault, collection: @faults, :label_method => :category,  :label => "Categoria" %>
+  </div>
+
+  <div class = "col-12" >
     <%= f.text_area(:description, size: '71x10', id: 'text-area')%>
-    <%= f.association :fault, collection: @faults, :label_method => :category %>
-    <div id="centrar_boton_form">
+  </div>
+  
+  <div id="centrar_boton_form">
     <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
   </div>
+  
 <% end %>

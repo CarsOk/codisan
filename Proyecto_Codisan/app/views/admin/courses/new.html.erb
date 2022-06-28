@@ -1,4 +1,10 @@
-<div>
-      <%= render "form" %>
+<div id="container-form-course">
+  <%= form_tag new_admin_course_path, method: :get do %>
+    <label>Buscar Estudiante</label>
+    <input name = "document", placeholder="documento">
+    <%= submit_tag "buscar" %>
+  <%end%> 
+    
+  <%= render "form" %>
 </div>
 
