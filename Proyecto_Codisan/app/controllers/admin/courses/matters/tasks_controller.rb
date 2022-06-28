@@ -4,6 +4,7 @@ class Admin::Courses::Matters::TasksController < ApplicationController
   
   def index
       @tasks = @matter.tasks
+      @course = Course.find(params[:course_id])
   end
   
   # #   def show
@@ -37,6 +38,8 @@ class Admin::Courses::Matters::TasksController < ApplicationController
   #   end
 
 private
+
+
 
   def set_matter
     @matter = Matter.find(params[:matter_id])

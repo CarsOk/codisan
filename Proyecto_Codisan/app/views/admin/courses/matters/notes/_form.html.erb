@@ -1,4 +1,4 @@
-
+<%= button_to "atras", admin_course_matter_path(@course, @matter), method: :get, class: "btn btn-primary", id:"btn-back" %>
 <%= simple_form_for [:admin, :course, :matter, @note] do |f| %>
   <table class="table">
     <thead class="thead-dark">
@@ -11,15 +11,14 @@
 
   </thead>
     <tbody>
-    <h5>Estudiantes</h5>
+      <h5>Estudiantes</h5>
       <% @users.each do |user| %> 
         <% if user.has_role? :student %>
           <tr>
-            
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
-            <td><%= check_box_tag "note[student_id]" , user.id%></td>
+            <td><%= radio_button_tag "note[student_id]" , user.id%></td>
           </tr>
         <% end %> 
       <% end %>
@@ -37,16 +36,14 @@
 
   </thead>
     <tbody>
-    
-    <h5>Profesores</h5>
+      <h5>Profesores</h5>
       <% @users.each do |user| %> 
         <% if user.has_role? :teacher %>
           <tr>
-            <h5>Profesores</h5>
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
-            <td><%= check_box_tag "note[teacher_id]" ,  user.id%></td>
+            <td><%= radio_button_tag "note[teacher_id]" ,  user.id%></td>
           </tr>
         <% end %> 
       <% end %>
@@ -54,12 +51,12 @@
   </table>
   
 
-   <%= f.association :task, collection: @tasks, label: "Tarea"%>
-   <%= f.association :course, label_method: :name_course, label: "Curso"%>
+    <%= f.association :task, label: 'Actividad', collection: @tasks %>
+    <%= f.association :course, label: 'Curso', label_method: :name_course %>
   
-    <%= f.input :qualification, autofocus: true, placeholder: 'calificacion', label: "Calificacion" %>
+    <%= f.input :qualification,label: 'Calificación', autofocus: true, placeholder: 'calificacion', required: true %>
   <div id="centrar-boton-notas">
-    <%= f.button :submit, class:"btn btn-primary", id:"boton-notas"%> 
+    <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas"%> 
     <% end %>
   </div>
 <br />

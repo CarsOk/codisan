@@ -16,7 +16,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      flash[:alert] = "foto creada correctamente"
+      flash[:success] = "foto creada correctamente"
       redirect_to photos_path
     else
       flash[:alert] = "Error al guardar la foto"
@@ -30,11 +30,20 @@ class PhotosController < ApplicationController
 
   def update
     if @photo.update(photo_params)
-      flash[:alert] = "foto actualizada correctamente"
+      flash[:success] = "foto actualizada correctamente"
       redirect_to photos_path
     else
       flash[:alert] = "Error al actualizar la foto"
       render :edit
+    end
+  end
+
+  def destroy
+    if @photo.destroy
+      flash[:success] = "foto eliminada"  
+      redirect_to photos_path
+    else
+      flash[:alert] = "Error al eliminar la foto"
     end
   end
 

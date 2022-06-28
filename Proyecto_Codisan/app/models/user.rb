@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 
+  validates :document, length: { maximum: 10 }
+  validates :document, uniqueness: true
+  validates :name_course, uniqueness: true
+
   HUMANIZED_ATTRIBUTES = {
     document: " El documento",
     first_name: "Primer Nombre",
@@ -27,7 +31,6 @@ class User < ApplicationRecord
   has_many :notes
   has_many :matters, through: :notes
 
- 
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
