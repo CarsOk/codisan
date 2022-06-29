@@ -1,34 +1,31 @@
-<div class="container" id="form-information">
-  <div class="row" id="row">
-    <div class="col-12" id="attr-form">
-      <%= simple_form_for @information do |f| %>
-
-        <%= f.file_field :avatar, id:"file-input" %> 
-        <br>
-        <%= f.label :name, "Nombre de la Intitucion :" , id:"center-text" %> 
-        <br>
-        <%= f.text_field :name, id:"center-input" %>
-        <br>
-        <%= f.label :direction, "Direccion :", id:"center-text" %> 
-        <br>
-        <%= f.text_field :direction, id:"center-input" %>
-        <br>
-        <%= f.label :city, "Ciudad :", id:"center-text" %> 
-        <br>
-        <%= f.text_field :city, id:"center-input" %>
-        <br>
-        <%= f.label :email, "Correo Electronico :", id:"center-text" %> 
-        <br>
-        <%= f.text_field :email, id:"center-input" %>
-        <br>
-        <%= f.label :phone, "Celular :", id:"center-text" %> 
-        <br>
-        <%= f.text_field :phone, id:"center-input" %>
-        <br><br>
-
-
-        <%=f.submit "Guardar", disable_with: 'Espere...' , id:"btn-guardar", class:"btn btn-primary"%> 
-      <% end %>
-    </div>
+<%= simple_form_for @information do |f| %>
+  <div id="form-information">
+    <%= f.file_field :avatar%> 
   </div>
-</div>
+
+  <div id="form-information">
+    <%= f.label :name, "Nombre de la Institucion:" %> 
+    <%= f.text_field :name %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :direction, "Dirección:"%> 
+    <%= f.text_field :direction %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :city, "Ciudad:"%> 
+    <%= f.text_field :city %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :email, "Correo electronico:" %> 
+    <%= f.text_field :email%>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :phone, "Celular:"%> 
+    <%= f.text_field :phone %>
+  </div>
+  <%=f.submit "Guardar", disable_with: 'Espere...' , id:"btn-guardar", class:"btn btn-primary"%> 
+<% end %>

@@ -1,41 +1,27 @@
-
 #list-container{
   padding: 30px;
 }
 
 #list-info{
   text-align: center;
- 
 }
-
-#lista{
-  margin:auto;
-}
-
 #btn1{
-  display:flex;
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
 }
-
-#form-information{
-  padding: 30px;
-  width: 450px;
+#image{
+  width: 200px;
+  margin-bottom: 20px;
 }
-
-#attr-form{
-  margin:auto;
-  display:flex;
+#lista{
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+#centrar_index_info{
 
 }
-
-#row{
-  border: 1px solid gray;
-  padding: 50px;
-  background-color: whitesmoke;
-  border-radius: 20px;
-}
-
 
 #btn-guardar{
   margin:auto;
@@ -53,15 +39,29 @@
   border-color: green;
 }
 
-#center-input{
-  margin-left: 30px;
-  margin-bottom: 10px;
+#container-informacion{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-#center-text{
-  margin-left: 30px;
+#id-informacion{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 400px;
+  width: 500px;
 }
 
-#file-input{
+#form-information{
   margin-bottom: 10px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#container-information{
+  display: flex;
+  justify-content: center;
+  height: 500px;
 }

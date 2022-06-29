@@ -1,26 +1,23 @@
+<div class="container-fluid" id ="list-container">
 <%= link_to "Volver" , root_path, method: :get , class:"btn btn-primary", id:"btn-back" %>
-
-<div class="container" id ="list-container">
   <div class="row">
-    <div class="col-6" id ="lista">
+    <div class="col" id ="lista">
       <ul class="list-group" id="list-info">
         <% @informations.each do |info| %>
-        <li class="list-group-item"><%= image_tag info.avatar.url, id:"image"%></li>
+        <div><%= image_tag info.avatar.url, id:"image"%></div>
+        <div id="centrar_index_info">
           <li class="list-group-item"> <%= info.name %></li>
           <li class="list-group-item"><%= info.direction %></li>
           <li class="list-group-item"><%= info.city %></li>
           <li class="list-group-item"> <%= info.email %></li>
           <li class="list-group-item"><%= info.phone %></li>
-          <br>
-          <% if current_user.has_role? :admin %>
-            <div id="btn1">
+        </div>
+        <% end %>
+        <div id="btn1">
               <%= button_to "Registrar informacion", new_information_path, method: :get , class:"btn btn-primary", id:"btn-back" %>
               <%= button_to "Edita informacion", edit_information_path(@informations.ids), method: :get,class:"btn btn-primary", id:"btn-back" %>
-            </div>
-          <% end %>
-        <% end %>
+        </div>
       </ul>
     </div>
-    
   </div>
 </div>
