@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   validates :document, length: { maximum: 10 }
   validates :document, uniqueness: true
-  validates :name_course, uniqueness: true
+  
 
   HUMANIZED_ATTRIBUTES = {
     document: " El documento",
