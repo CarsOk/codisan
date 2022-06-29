@@ -1,0 +1,67 @@
+
+#list-container{
+  padding: 30px;
+}
+
+#list-info{
+  text-align: center;
+ 
+}
+
+#lista{
+  margin:auto;
+}
+
+#btn1{
+  display:flex;
+  justify-content: space-around;
+}
+
+#form-information{
+  padding: 30px;
+  width: 450px;
+}
+
+#attr-form{
+  margin:auto;
+  display:flex;
+  justify-content: center;
+
+}
+
+#row{
+  border: 1px solid gray;
+  padding: 50px;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+
+#btn-guardar{
+  margin:auto;
+  display:flex;
+  justify-content: center;
+  margin-left: auto;
+  background-color: green;
+  border-color: green;
+}
+
+#btn-back-2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: green;
+  border-color: green;
+}
+
+#center-input{
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#center-text{
+  margin-left: 30px;
+}
+
+#file-input{
+  margin-bottom: 10px;
+}

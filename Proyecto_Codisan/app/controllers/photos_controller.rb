@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :destroy, :update]
-
+  before_action :authenticate_user!
   def index
     @photos = Photo.all
   end

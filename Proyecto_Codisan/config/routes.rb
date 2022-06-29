@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :photos
   resources :users
   resources :courses
+  resources :information
   
   namespace :admin do
     resources :matters
