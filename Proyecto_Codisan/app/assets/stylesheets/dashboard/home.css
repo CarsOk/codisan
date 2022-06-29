@@ -1,5 +1,5 @@
 /* dispositivos pequeños */
-@media (max-width:576px) {
+@media (max-width:767px) {
 
     #css-container{
       margin: 0px;
@@ -49,7 +49,7 @@
      justify-content: space-around;
     }
    
-  }
+}
   
   /* dispositivos medianos */
   @media (max-width:768px) {
@@ -74,9 +74,9 @@
         color: black;
     }
   
-    #div-parrafo{
+    /* #div-parrafo{
       border: 2px solid red;
-    }
+    } */
       
     .btn-light{
       border-radius: 0px;
@@ -84,9 +84,10 @@
       margin-top: 10px;
       margin-bottom: 10px;
     }
-      
-    #columna-derecha{  
-      border: 3px solid black;
+
+    #columna-derecha{ 
+      display: none; 
+      border: 3px solid black;  
     }
       
     .col-derecha-contenido{    
@@ -126,10 +127,6 @@
     #parrafo{
         color: black;
     }
-  
-    #div-parrafo{
-      border: 2px solid red;
-    }
       
     .btn-light{
       border-radius: 0px;
@@ -138,10 +135,9 @@
       margin-bottom: 10px;
     }
       
-    #columna-derecha{  
-      border: 3px solid black;
-      height: 100%;
-      margin-top: 20px;
+    #columna-derecha{ 
+      display: none; 
+      border: 3px solid black;  
     }
       
     .col-derecha-contenido{    
@@ -153,10 +149,19 @@
       margin-top: 10px;    
       margin-bottom: 10px;
     } 
+
     #div-row{
+      flex-wrap: nowrap;
       display: inline-flex;
       justify-content: space-around;
      }
+
+     #columna-center{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+     }
+
   }
   
     /* dispositivos grandes */
