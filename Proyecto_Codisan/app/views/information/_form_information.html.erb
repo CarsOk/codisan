@@ -27,5 +27,13 @@
     <%= f.label :phone, "Celular:"%> 
     <%= f.text_field :phone %>
   </div>
-  <%=f.submit "Guardar", disable_with: 'Espere...' , id:"btn-guardar", class:"btn btn-primary"%> 
+  <%=f.submit "Guardar", disable_with: 'Espere...' , id:"btn-guardar", class:"btn btn-primary", onclick: "return confirmDestroy('¿Desea guardar esto?')"%> 
 <% end %>
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

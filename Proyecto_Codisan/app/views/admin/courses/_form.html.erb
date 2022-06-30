@@ -6,7 +6,7 @@
     </div>
   </div>
   <div id="centrar_boton_form">
-    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso"%> 
+    <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso", onclick: "return confirmDestroy('¿Desea guardar este nuevo curso?')"%> 
   </div>
 
   <div id="columna-form">
@@ -69,4 +69,11 @@
     </div>
   </div>
 <% end %>
-   
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

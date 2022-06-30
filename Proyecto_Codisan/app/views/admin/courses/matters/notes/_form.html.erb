@@ -42,7 +42,7 @@
             <td><%= user.document %></td>
             <td><%= user.first_name %> <%= user.second_name %></td>
             <td><%= user.first_last_name %> <%= user.second_last_name %></td>
-            <td><%= radio_button_tag "note[teacher_id]" ,  user.id%></td>
+            <td><%= radio_button_tag "note[teacher_id]", user.id%></td>
           </tr>
         <% end %> 
       <% end %>
@@ -55,9 +55,18 @@
   
     <%= f.input :qualification,label: 'Calificación', autofocus: true, placeholder: 'calificacion', required: true %>
   <div id="centrar-boton-notas">
-    <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas"%>
+    <%= f.button :submit, 'Registrar Nota', class:"btn btn-primary", id:"boton-notas", onclick: "return confirmDestroy('¿Desea agregar una nueva nota a este estudiante?')"%>
     <% end %>
 
     <%= button_to "Volver", admin_course_matter_path(@course, @matter), method: :get, class: "btn btn-primary", id:"boton-notas" %> 
   </div>
 <br />
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

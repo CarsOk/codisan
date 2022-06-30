@@ -1,4 +1,13 @@
   <%= simple_form_for [:admin, @matter] do |f| %>
   <%= f.text_field :name_matter, placeholder:'Nombre de la materia' %>
-    <%= f.submit 'Guardar' %>
+    <%= f.submit 'Guardar', onclick: "return confirmDestroy('¿Desea Guardar esto?')" %>
   <% end%>
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

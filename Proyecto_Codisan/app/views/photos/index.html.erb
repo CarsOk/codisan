@@ -30,7 +30,7 @@
               </td>
               <td>
                 <%= button_to "Editar" , edit_photo_path(photo), method: :get, class:"btn btn-primary", id:"botonesFotos" %>
-                <%= button_to "Eliminar" , photo_path(photo), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete, class:"btn btn-primary", id:"botonesFotos" %>
+                <%= button_to "Eliminar" , photo_path(photo), onclick: "return confirmDestroy('¿Desea eliminar esto?')", method: :delete, class:"btn btn-primary", id:"botonesFotos" %>
               </td>
             </tr>
             <% end %>
@@ -39,3 +39,12 @@
     </div>
   </div>
 </div>
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

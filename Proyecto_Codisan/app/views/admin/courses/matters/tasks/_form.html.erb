@@ -1,6 +1,4 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col" id="elementos-form">
+
             <%= simple_form_for [:admin, :course, :matter, @task] do |f| %>
             <h5 id="h5Tareas">Crear nueva actividad</h5>
             <br>
@@ -14,10 +12,16 @@
                 <%= f.text_area(:description_activity, id:'text-area')%>
                 <br>
                 <div id="centrar-boton-form-tareas">
-                    <%= f.submit 'Guardar', class:"btn btn-primary", id:"centrar-boton-guardar-tareas"%>
+                    <%= f.submit 'Guardar', class:"btn btn-primary", id:"centrar-boton-guardar-tareas", onclick: "return confirmDestroy('¿Desea agregar una nueva actividad?')"%>
                     <%end%>
                    <%= button_to "volver", admin_course_matter_tasks_path, method: :get, class:"btn btn-primary", id:"centrar-boton-guardar-tareas"%> 
                 </div>
-        </div>
-    </div>
-</div>
+       
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>
