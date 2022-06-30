@@ -10,10 +10,10 @@
     <%= f.text_area(:description, id: 'text-area')%>
     </div>
     <div id="centrar_boton_form">
-      <%= f.button :submit, class:"btn btn-primary", id:"boton_Crear_Curso", onclick: "return confirmDestroy('¿Desea Guardar esto?')"%> 
-      <%= button_to 'Volver', root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
+      <%= f.submit "Crear sanción", class:"btn btn-primary",id:"boton_falta", onclick: "return confirmDestroy('¿Desea Guardar esto?')"%> 
+      <% end %>
+      <%= button_to 'Volver', root_path, method: :get, class:"btn btn-primary", id:"boton_falta" %>
     </div>
-<% end %>
 
 <script>
 function confirmDestroy(message) {

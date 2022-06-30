@@ -12,10 +12,9 @@
           <li class="list-group-item"> <%= info.email %></li>
           <li class="list-group-item"><%= info.phone %></li>
         </div>
+              <%= button_to "Editar informacion", edit_information_path(@informations.ids), method: :get,class:"btn btn-primary", id:"btn-back" %>
         <% end %>
         <div id="btn1">
-              <%= button_to "Registrar informacion", new_information_path, method: :get , class:"btn btn-primary", id:"btn-back" %>
-              <%= button_to "Edita informacion", edit_information_path(@informations.ids), method: :get,class:"btn btn-primary", id:"btn-back" %>
         </div>
       </ul>
     </div>
