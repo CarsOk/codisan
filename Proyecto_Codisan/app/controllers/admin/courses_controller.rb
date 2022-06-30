@@ -28,7 +28,7 @@ class Admin::CoursesController < ApplicationController
     @course = Course.new(course_params)
     if @course.save
       flash[:alert] = "Curso creado correctamente"
-      redirect_to new_admin_course_path
+      redirect_to admin_courses_path
     else
       flash[:alert] = "Error al crear el curso"
       render :new
