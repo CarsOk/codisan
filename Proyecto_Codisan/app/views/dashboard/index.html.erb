@@ -7,7 +7,7 @@
       <%= button_to "Profesores", users_path(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
       <%= button_to "Boletines", botonCourse(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
       <%= button_to "Observador",  botonObservador(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
-      <%= button_to "Informacion", information_index_path(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
+      <%= button_to "Informacion", admin_information_index_path(), method: :get, class:"btn btn-light", id:"menuIzquierdo" %>
     </div>
 
     <div class="col-4", id="columna-center" >
@@ -36,7 +36,7 @@
             <div class="row">
               <div id="newfoto">
                 <% if current_user.has_role? :admin %>
-                  <%= button_to "Fotos", photos_path, method: :get, class:"btn btn-light", id:"botonFotos" %>
+                  <%= button_to "Fotos", admin_photos_path, method: :get, class:"btn btn-light", id:"botonFotos" %>
                 <% end %>
               </div>
               <% @photos.each do |fotos| %>

@@ -1,0 +1,39 @@
+<%= simple_form_for [:admin, @information] do |f| %>
+  <div id="form-information">
+    <%= f.file_field :avatar%> 
+  </div>
+
+  <div id="form-information">
+    <%= f.label :name, "Nombre de la Institucion:" %> 
+    <%= f.text_field :name %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :direction, "Dirección:"%> 
+    <%= f.text_field :direction %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :city, "Ciudad:"%> 
+    <%= f.text_field :city %>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :email, "Correo electronico:" %> 
+    <%= f.text_field :email%>
+  </div>
+
+  <div id="form-information">
+    <%= f.label :phone, "Celular:"%> 
+    <%= f.text_field :phone %>
+  </div>
+  <%=f.submit "Guardar", disable_with: 'Espere...' , id:"btn-guardar", class:"btn btn-primary", onclick: "return confirmDestroy('¿Desea guardar esto?')"%> 
+<% end %>
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>
