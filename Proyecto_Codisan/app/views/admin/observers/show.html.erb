@@ -16,7 +16,7 @@
               <td><%= observador.fault.sanction %></td>
               <td> 
                 <%= link_to "Editar", edit_admin_observer_fault_observer_path(@observer, observador ), method: :get, id:"quitarLinea"%>
-                <%= button_to "Eliminar", admin_observer_fault_observer_path(@observer, observador ), method: :delete, id:"quitarLinea"%>
+                <%= button_to "Eliminar", admin_observer_fault_observer_path(@observer, observador ), method: :delete, id:"quitarLinea", onclick: "return confirmDestroy('¿Desea eliminar esto?')"%>
               </td>
         </tr>
       <% end %>
@@ -24,3 +24,13 @@
   </table>
   <%= button_to "crear", new_admin_observer_fault_observer_path(@observer, @fault_observer ), method: :get, class:"btn btn-primary", id:"boton-faltas"%>
 </div>
+
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>
