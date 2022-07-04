@@ -11,8 +11,8 @@
               <% if user.id == calificacion[2] &&  @course.id == calificacion[3]%>
                 <%= link_to calificacion[0], admin_course_matter_note_path(@course, @matter, calificacion[1] ), method: :get %>
               <%end%>
-          </td>
-          <% end%>
+            <% end%>
+          </td> 
         </tr>
       <% end %> 
     <% end %>
