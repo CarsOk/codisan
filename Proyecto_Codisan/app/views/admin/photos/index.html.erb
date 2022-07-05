@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <%= button_to "Agregar nueva foto" , new_admin_photo_path(), method: :get, class:"btn btn-primary", id:"botonesFotos" %>
+      <%= button_to "atras", root_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @photos.each do |photo| %>
+            <tr>
+              <td>
+                <%= photo.name_photo %>
+              </td>
+              <td>
+                <div id="list-photo">
+                  <%= image_tag photo.avatar.url, id: 'imagen-dashboard' %>
+                </div>
+              </td>
+              <td>
+                <div id="list-description">
+                  <%= photo.description  %>
+                </div>
+              </td>
+              <td>
+                <%= button_to "Editar" , edit_admin_photo_path(photo), method: :get, class:"btn btn-primary", id:"botonesFotos" %>
+                <%= button_to "Eliminar" , admin_photo_path(photo), onclick: "return confirmDestroy('¿Desea eliminar esto?')", method: :delete, class:"btn btn-primary", id:"botonesFotos" %>
+              </td>
+            </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>

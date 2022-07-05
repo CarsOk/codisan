@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <%= button_to "Volver", admin_photos_path, method: :get, class:"btn btn-primary", id:"btn-back" %>
+  <div class="row">
+    <div class="col-8" id="form-imagen">
+      <%= simple_form_for [:admin, @photo ] do |f| %>
+        <h5>
+          <%= f.label :name_photo, "Nombre de la imagen:" %>
+        </h5>
+        <%= f.text_field :name_photo %>
+          <br><br>
+        <h5>Descripcion de la imagen:</h5>
+        <%= f.text_area(:description, size: '71x10', id: 'text-area')%>
+        <%= f.file_field :avatar %>
+        <br><br>
+          <%= f.submit "Guardar", class:"btn btn-primary", id:"botonesFotos" , onclick: "return confirmDestroy('¿Desea Guardar esto?')"%>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>
