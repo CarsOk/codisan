@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :photos
   resources :users
   resources :courses
-  resources :information
   
   namespace :admin do
     resources :matters
@@ -12,6 +10,8 @@ Rails.application.routes.draw do
       resources :fault_observers, module: :observers do
       end
     end
+    resources :information
+    resources :photos
     resources :faults
     resources :courses  do
       resources :matters, module: :courses do
