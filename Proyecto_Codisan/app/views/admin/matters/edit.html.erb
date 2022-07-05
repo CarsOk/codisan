@@ -3,3 +3,12 @@
   <h5>Editar nombre de la materia </h5>
   <%= render "form" %>
 </div>
+
+
+<script>
+function confirmDestroy(message) {
+  if (!confirm(message)) {
+    return false;
+  }
+}
+</script>
